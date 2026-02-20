@@ -2,48 +2,39 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Nos Services Automobiles | Inspection, Entretien, Vente | RMautomotive.fr',
-  description:
-    'Découvrez tous les services de RMautomotive : inspection avant achat, entretien toutes marques, réparation, vente de véhicules d\'occasion garantis. Devis gratuit. 06 12 34 56 78.',
-  openGraph: {
-    title: 'Services Automobiles — Inspection, Entretien, Vente | RMautomotive',
-    description: 'Inspection automobile, entretien toutes marques, réparation et vente de véhicules garantis.',
-    url: 'https://rmautomotive.fr/services',
-  },
+  title: 'Services Auto — Inspection, Entretien, Vente | Mitry-Mory (77)',
+  description: 'RM Automotive Mitry-Mory — Inspection avant achat, entretien toutes marques, réparation, vente de véhicules garantis. Distributeur officiel Lorries. ☎ 06 50 50 01 75.',
 }
 
-const categoriesServices = [
+const categories = [
   {
     icon: '🔍',
     titre: 'Inspection automobile',
-    couleur: 'blue',
     services: [
-      { nom: 'Inspection avant achat', prix: 'à partir de 79€', desc: 'Contrôle mécanique, carrosserie, électronique complet avant l\'achat d\'un véhicule d\'occasion.' },
-      { nom: 'Diagnostic électronique', prix: 'à partir de 49€', desc: 'Lecture et analyse des codes défauts avec valise de diagnostic multimarque.' },
-      { nom: 'Contrôle pré-vente', prix: 'à partir de 59€', desc: 'Rapport d\'état complet pour faciliter la vente de votre véhicule au meilleur prix.' },
+      { nom: 'Inspection avant achat', prix: 'à partir de 79€', desc: 'Contrôle mécanique complet, carrosserie, électronique avant d\'acheter un véhicule d\'occasion. Rapport détaillé fourni.' },
+      { nom: 'Diagnostic électronique', prix: 'à partir de 49€', desc: 'Lecture et analyse des codes défauts. Valise multimarque professionnelle. Toutes marques et motorisations.' },
+      { nom: 'Contrôle pré-vente', prix: 'à partir de 59€', desc: 'Rapport d\'état complet pour faciliter la vente de votre véhicule au juste prix.' },
     ],
   },
   {
     icon: '🔧',
     titre: 'Entretien & Réparation',
-    couleur: 'green',
     services: [
-      { nom: 'Vidange + filtre', prix: 'à partir de 69€', desc: 'Vidange huile moteur avec remplacement du filtre à huile. Toutes marques, toutes cylindrées.' },
-      { nom: 'Freins (disques + plaquettes)', prix: 'à partir de 149€', desc: 'Remplacement disques et plaquettes par essieu. Rodage et vérification complète du système.' },
-      { nom: 'Courroie de distribution', prix: 'sur devis', desc: 'Remplacement courroie de distribution avec kit complet. Indispensable à intervalles réguliers.' },
-      { nom: 'Climatisation', prix: 'à partir de 89€', desc: 'Recharge gaz, désinfection du circuit, contrôle du condenseur et du compresseur.' },
-      { nom: 'Pneus', prix: 'à partir de 25€/pneu', desc: 'Fourniture et montage de pneumatiques toutes marques. Équilibrage et géométrie disponibles.' },
-      { nom: 'Batterie', prix: 'à partir de 79€', desc: 'Test de la batterie en charge, remplacement si nécessaire avec garantie 2 ans.' },
+      { nom: 'Vidange + filtre', prix: 'à partir de 69€', desc: 'Vidange huile moteur, remplacement filtre à huile. Huile de qualité OEM. Toutes marques.' },
+      { nom: 'Freins (disques + plaquettes)', prix: 'à partir de 149€', desc: 'Remplacement disques et plaquettes par essieu. Rodage et vérification complète du système de freinage.' },
+      { nom: 'Courroie de distribution', prix: 'sur devis', desc: 'Remplacement courroie de distribution avec kit complet. Recommandé selon kilométrage constructeur.' },
+      { nom: 'Climatisation', prix: 'à partir de 89€', desc: 'Recharge gaz climatisation, désinfection, contrôle condenseur et compresseur.' },
+      { nom: 'Pneus', prix: 'à partir de 25€/pneu', desc: 'Fourniture et montage toutes marques. Équilibrage et géométrie disponibles.' },
+      { nom: 'Batterie', prix: 'à partir de 79€', desc: 'Test en charge, remplacement si nécessaire avec garantie 2 ans.' },
     ],
   },
   {
     icon: '🚗',
     titre: 'Vente de véhicules',
-    couleur: 'purple',
     services: [
-      { nom: 'Véhicules d\'occasion garantis', prix: 'voir stock', desc: 'Sélection de véhicules inspectés, révisés et garantis 6 mois minimum. Toutes marques.' },
-      { nom: 'Reprise de votre véhicule', prix: 'estimation gratuite', desc: 'Estimation gratuite de votre véhicule, reprise immédiate ou dépôt-vente selon votre préférence.' },
-      { nom: 'Financement auto', prix: 'sous conditions', desc: 'Solutions de financement personnalisées pour l\'achat de votre prochain véhicule.' },
+      { nom: 'Véhicules d\'occasion garantis', prix: 'Voir stock', desc: 'Sélection de véhicules inspectés, révisés et garantis. Distributeur officiel Lorries. Toutes marques.' },
+      { nom: 'Reprise de votre véhicule', prix: 'Estimation gratuite', desc: 'Estimation rapide, reprise immédiate ou dépôt-vente selon votre préférence.' },
+      { nom: 'Financement auto', prix: 'Selon profil', desc: 'Solutions de financement personnalisées pour l\'achat de votre prochain véhicule.' },
     ],
   },
 ]
@@ -51,34 +42,40 @@ const categoriesServices = [
 export default function Services() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4">Nos Services</h1>
-          <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            De l&apos;entretien courant à l&apos;inspection avant achat, en passant par la vente de véhicules —
-            tout sous un même toit, par des professionnels certifiés.
+      {/* HERO */}
+      <section className="bg-gray-950 text-white py-20 px-4 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-900 to-gray-950" />
+        <div className="absolute top-0 right-0 w-80 h-80 bg-red-600/10 rounded-full blur-3xl" />
+        <div className="relative max-w-4xl mx-auto text-center">
+          <h1 className="text-4xl md:text-5xl font-black mb-4">Nos Services</h1>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Garage indépendant à Mitry-Mory (77) — expertise toutes marques, devis gratuit, qualité garantie.
           </p>
+          <div className="flex items-center justify-center gap-3 mt-6 text-yellow-400">
+            {'⭐'.repeat(5)}
+            <span className="text-white font-bold">5/5</span>
+            <span className="text-gray-400 text-sm">· 42 avis Google</span>
+          </div>
         </div>
       </section>
 
-      {/* Services Grid */}
+      {/* SERVICES */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto space-y-16">
-          {categoriesServices.map((cat) => (
+          {categories.map((cat) => (
             <div key={cat.titre}>
               <div className="flex items-center gap-3 mb-8">
                 <span className="text-4xl">{cat.icon}</span>
-                <h2 className="text-2xl font-bold text-blue-900">{cat.titre}</h2>
+                <h2 className="text-2xl font-black text-gray-900">{cat.titre}</h2>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                 {cat.services.map((s) => (
-                  <div key={s.nom} className="bg-white rounded-2xl p-6 shadow hover:shadow-md transition-shadow">
+                  <div key={s.nom} className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:border-red-100 transition-all hover:-translate-y-0.5">
                     <div className="flex justify-between items-start mb-3">
-                      <h3 className="font-bold text-blue-800 text-lg">{s.nom}</h3>
-                      <span className="text-orange-600 font-semibold text-sm whitespace-nowrap ml-2">{s.prix}</span>
+                      <h3 className="font-bold text-gray-900">{s.nom}</h3>
+                      <span className="text-red-600 font-semibold text-sm whitespace-nowrap ml-3 flex-shrink-0">{s.prix}</span>
                     </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
                   </div>
                 ))}
               </div>
@@ -87,19 +84,32 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Urgence */}
-      <section className="py-12 px-4 bg-orange-600 text-white text-center">
-        <p className="text-2xl font-bold mb-2">🚨 Besoin d&apos;un dépannage d&apos;urgence ?</p>
-        <p className="text-orange-100 mb-6">Disponible 24h/24 — 7j/7</p>
+      {/* DISTRIBUTEUR LORRIES */}
+      <section className="py-14 px-4 bg-gray-900 text-white text-center">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-5xl mb-4">🏆</div>
+          <h2 className="text-2xl font-black mb-3">Distributeur Officiel Lorries</h2>
+          <p className="text-gray-400 text-lg">
+            RM Automotive est distributeur officiel <strong className="text-white">Lorries</strong> — votre garantie de véhicules de qualité et de services premium.
+          </p>
+        </div>
+      </section>
+
+      {/* URGENCE */}
+      <section className="py-14 px-4 bg-red-600 text-white text-center">
+        <h2 className="text-2xl font-black mb-2">🚨 Besoin d&apos;un dépannage ?</h2>
+        <p className="text-red-100 mb-6">Disponible 24h/24 — 7j/7</p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:0612345678" className="bg-white text-orange-600 font-bold px-8 py-3 rounded-full hover:bg-orange-50 transition-colors">
-            📞 06 12 34 56 78
+          <a href="tel:0650500175" className="bg-white text-red-600 font-black px-8 py-3 rounded-full hover:bg-red-50 transition-colors text-lg">
+            📞 06 50 50 01 75
           </a>
-          <Link href="/depannage" className="border border-white/40 hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-full transition-colors">
-            Voir le service dépannage
+          <Link href="/depannage" className="border-2 border-white/40 hover:bg-white/10 text-white font-semibold px-8 py-3 rounded-full transition-colors">
+            En savoir plus
           </Link>
         </div>
       </section>
+
+      <div className="h-16 md:hidden" />
     </>
   )
 }
