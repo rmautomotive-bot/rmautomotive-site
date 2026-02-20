@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -89,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
-              <div className="bg-red-600 text-white font-black text-xl w-10 h-10 rounded-lg flex items-center justify-center shadow-lg shadow-red-200">RM</div>
+              <Image src="/logo.jpg" alt="RM Automotive" width={44} height={44} className="rounded-lg object-contain bg-white" priority />
               <div>
                 <div className="font-black text-gray-900 text-base leading-tight">RM Automotive</div>
                 <div className="text-xs text-gray-500 leading-tight">Île-de-France · ⭐ 5/5 Google · 24h/24</div>
@@ -118,7 +119,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
-                <div className="bg-red-600 text-white font-black text-xl w-10 h-10 rounded-lg flex items-center justify-center">RM</div>
+                <Image src="/logo.jpg" alt="RM Automotive" width={44} height={44} className="rounded-lg object-contain bg-white" />
                 <span className="font-black text-white text-lg">RM Automotive</span>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed mb-4">
