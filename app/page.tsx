@@ -1,201 +1,285 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Dépannage Auto 24h/24 — Toute l\'Île-de-France | RM Automotive ⭐ 5/5',
-  description: 'RM Automotive — Dépannage voiture 24h/24 7j/7 dans toute l\'Île-de-France (75, 77, 78, 91, 92, 93, 94, 95). Inspection, entretien, vente. 42 avis 5 étoiles. ☎ 06 50 50 01 75.',
+  title: 'RM Automotive — Dépannage 24h/24 · Vente Auto · Expertise | Île-de-France ⭐ 5/5',
+  description: 'RM Automotive en Île-de-France — Dépannage automobile 24h/24, vente & recherche de véhicules, inspection et entretien. ⭐ 5/5 sur Google. ☎ 06 50 50 01 75.',
 }
 
-const avisGoogle = [
-  { nom: 'Laureen Sassignol', note: 5, date: 'il y a 1 mois', texte: 'Parfait. Très réactif et efficace pour le dépannage. Je recommande vivement, service impeccable et professionnel.' },
-  { nom: 'Hassan B.', note: 5, date: 'il y a 11 mois', texte: 'Fiable, Réactif et Flexible. RM Automotive est très bien équipé et prend soin de charger et décharger votre véhicule. Service top !' },
-  { nom: 'Florence Besnainou', note: 5, date: 'il y a 4 mois', texte: "L'accueil, le service et la finalisation de cet achat se sont déroulés à merveille. Je recommande fortement !" },
-]
-
-const services = [
-  { icon: '🚨', title: 'Dépannage 24h/24', desc: 'Panne, accident, batterie, crevaison, remorquage. Intervention express partout en Île-de-France.', href: '/depannage', hot: true },
-  { icon: '🔍', title: 'Inspection avant achat', desc: 'Contrôle mécanique complet + rapport détaillé. Achetez l\'esprit tranquille.', href: '/services', hot: false },
-  { icon: '🔧', title: 'Entretien & Réparation', desc: 'Vidange, freins, distribution, clim. Toutes marques, toutes cylindrées.', href: '/services', hot: false },
-  { icon: '🚗', title: 'Vente de véhicules', desc: 'Véhicules inspectés et garantis. Distributeur officiel Lorries. Reprise de votre auto.', href: '/services', hot: false },
-]
-
-const deps = [
-  { code: '75', nom: 'Paris', slug: 'paris', villes: ['Paris Centre', 'Paris Nord', 'Paris Est', 'Paris Sud', 'Boulogne'] },
-  { code: '92', nom: 'Hauts-de-Seine', slug: 'hauts-de-seine', villes: ['Nanterre', 'Boulogne', 'Colombes', 'Asnières', 'Levallois'] },
-  { code: '93', nom: 'Seine-Saint-Denis', slug: 'seine-saint-denis', villes: ['Saint-Denis', 'Montreuil', 'Bobigny', 'Aulnay', 'Noisy-le-Grand'] },
-  { code: '94', nom: 'Val-de-Marne', slug: 'val-de-marne', villes: ['Créteil', 'Vincennes', 'Vitry', 'Ivry', 'Champigny'] },
-  { code: '77', nom: 'Seine-et-Marne', slug: 'seine-et-marne', villes: ['Mitry-Mory', 'Meaux', 'Melun', 'Chelles', 'Lagny'] },
-  { code: '91', nom: 'Essonne', slug: 'essonne', villes: ['Évry', 'Corbeil', 'Massy', 'Palaiseau', 'Gif-sur-Yvette'] },
-  { code: '78', nom: 'Yvelines', slug: 'yvelines', villes: ['Versailles', 'Saint-Germain', 'Poissy', 'Mantes', 'Rambouillet'] },
-  { code: '95', nom: 'Val-d\'Oise', slug: 'val-d-oise', villes: ['Cergy', 'Argenteuil', 'Pontoise', 'Sarcelles', 'Roissy'] },
+const avis = [
+  { nom: 'Laureen S.', note: 5, texte: 'Parfait. Très réactif et efficace pour le dépannage. Je recommande vivement !', date: 'il y a 1 mois' },
+  { nom: 'Hassan B.', note: 5, texte: 'Fiable, réactif et flexible. RM Automotive est très bien équipé. Service top !', date: 'il y a 11 mois' },
+  { nom: 'Florence B.', note: 5, texte: "L'accueil, le service et la finalisation de l'achat se sont déroulés à merveille.", date: 'il y a 4 mois' },
 ]
 
 export default function Home() {
   return (
     <>
-      {/* HERO */}
+      {/* ── HERO ── */}
       <section className="relative bg-gray-950 text-white overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-gray-950 via-gray-900 to-red-950 opacity-95" />
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-red-600/8 rounded-full blur-3xl" />
-        <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-red-600/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(220,38,38,0.12),_transparent_60%)]" />
+        <div className="relative max-w-6xl mx-auto px-4 pt-20 pb-10 md:pt-28 md:pb-16 text-center">
 
-        <div className="relative max-w-6xl mx-auto px-4 py-24 md:py-36">
-          <div className="max-w-3xl">
-            <div className="inline-flex items-center gap-2 bg-red-600/20 border border-red-500/30 text-red-400 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
-              <span className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-              Intervention active — 24h/24 7j/7 — Île-de-France
-            </div>
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-gray-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+            <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+            Disponible maintenant · Île-de-France · 24h/24 7j/7
+          </div>
 
-            <h1 className="text-5xl md:text-7xl font-black leading-[1.05] mb-6">
-              Dépannage Auto<br />
-              <span className="text-red-500">Île-de-France</span><br />
-              <span className="text-3xl md:text-4xl text-gray-300 font-bold">24h/24 — 7j/7</span>
-            </h1>
+          <h1 className="text-5xl md:text-7xl font-black leading-[1.04] mb-5 tracking-tight">
+            <span className="text-white">RM</span>
+            <span className="text-red-500"> Automotive</span>
+          </h1>
 
-            <p className="text-xl text-gray-300 mb-4 leading-relaxed">
-              Panne sur route, accident, batterie à plat ? On intervient <strong className="text-white">partout en Île-de-France</strong> en moins de 45 minutes.
-            </p>
+          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-lg mx-auto leading-relaxed">
+            Votre expert automobile en Île-de-France.<br/>
+            Dépannage, vente de véhicules, inspection &amp; entretien.
+          </p>
 
-            <div className="flex items-center gap-3 mb-10">
-              <span className="text-yellow-400 text-lg">⭐⭐⭐⭐⭐</span>
-              <span className="text-white font-bold">5/5</span>
-              <span className="text-gray-400 text-sm">· 42 avis Google · Paris, 77, 78, 91, 92, 93, 94, 95</span>
-            </div>
+          {/* ── 3 PORTES ── */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-bold text-xl px-8 py-5 rounded-2xl transition-all hover:shadow-2xl hover:shadow-red-600/30 flex items-center justify-center gap-3 group">
-                <span className="text-3xl">📞</span>
-                <div className="text-left">
-                  <div className="text-xs opacity-70 font-normal">Appeler l&apos;urgence</div>
-                  <div className="font-black">06 50 50 01 75</div>
+            {/* DÉPANNAGE — la plus importante */}
+            <a href="tel:0650500175"
+              className="group relative bg-red-600 hover:bg-red-700 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-600/40 md:col-span-1 flex flex-col">
+              <div className="flex items-start justify-between mb-6">
+                <div className="bg-white/20 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl">🚨</div>
+                <div className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
+                  EN DIRECT
                 </div>
-              </a>
-              <Link href="/zones" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold text-lg px-8 py-5 rounded-2xl transition-all flex items-center justify-center gap-2">
-                📍 Voir ma zone
-              </Link>
-            </div>
+              </div>
+              <h2 className="text-2xl font-black text-white mb-2">Dépannage</h2>
+              <p className="text-red-100 text-sm leading-relaxed mb-6 flex-1">
+                Panne, accident, batterie, crevaison. On intervient partout en IDF en moins de 45 min, jour et nuit.
+              </p>
+              <div className="bg-white text-red-600 font-black text-lg py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
+                📞 06 50 50 01 75
+              </div>
+            </a>
+
+            {/* VENTE */}
+            <Link href="/vente"
+              className="group relative bg-white/6 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col">
+              <div className="bg-white/10 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl mb-6">🚗</div>
+              <h2 className="text-2xl font-black text-white mb-2">Achat · Vente</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                Véhicules inspectés, révisés et garantis. Chercheur sur-mesure selon vos critères. Importation internationale.
+              </p>
+              <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
+                Voir nos réalisations <span className="text-red-500">→</span>
+              </div>
+            </Link>
+
+            {/* SERVICES */}
+            <Link href="/services"
+              className="group relative bg-white/6 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col">
+              <div className="bg-white/10 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl mb-6">🔍</div>
+              <h2 className="text-2xl font-black text-white mb-2">Expertise · Inspection</h2>
+              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
+                Diagnostic complet, inspection avant achat, entretien toutes marques. Techniciens certifiés.
+              </p>
+              <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
+                Découvrir nos services <span className="text-red-500">→</span>
+              </div>
+            </Link>
+
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-white" style={{clipPath: 'ellipse(55% 100% at 50% 100%)'}} />
+
+        {/* vague bas */}
+        <div className="h-12 bg-gray-50 mt-10" style={{ clipPath: 'ellipse(60% 100% at 50% 100%)' }} />
       </section>
 
-      {/* STATS */}
-      <section className="bg-white py-12 border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+
+      {/* ── BANDE CONFIANCE ── */}
+      <section className="bg-gray-50 py-10 px-4">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 md:gap-14 text-center">
           {[
-            { num: '5/5', label: 'Note Google', sub: '42 avis vérifiés' },
-            { num: '45 min', label: 'Intervention max', sub: 'Partout en IDF' },
-            { num: '8', label: 'Départements', sub: '75·77·78·91·92·93·94·95' },
-            { num: '24h/7j', label: 'Disponibilité', sub: 'Jours fériés inclus' },
-          ].map((s) => (
-            <div key={s.num}>
-              <div className="text-3xl md:text-4xl font-black text-red-600 mb-1">{s.num}</div>
-              <div className="font-bold text-gray-900 text-sm">{s.label}</div>
-              <div className="text-gray-400 text-xs mt-0.5">{s.sub}</div>
+            { v: '⭐ 5/5', l: '42 avis Google' },
+            { v: '< 45 min', l: 'Délai intervention' },
+            { v: '8 dép.', l: 'Île-de-France couverte' },
+            { v: '24h/7j', l: 'Dépannage nonstop' },
+            { v: '100%', l: 'Véhicules garantis' },
+          ].map(s => (
+            <div key={s.l}>
+              <div className="text-2xl font-black text-gray-900">{s.v}</div>
+              <div className="text-xs text-gray-500 mt-0.5">{s.l}</div>
             </div>
           ))}
         </div>
       </section>
 
-      {/* SERVICES */}
+
+      {/* ── DÉPANNAGE DETAIL ── */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          {/* Texte */}
+          <div>
+            <div className="inline-flex items-center gap-2 bg-red-50 text-red-600 text-xs font-bold px-3 py-1.5 rounded-full mb-5">
+              🚨 Urgence — 24h/24 7j/7
+            </div>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">
+              En panne ?<br />On arrive <span className="text-red-600">vite.</span>
+            </h2>
+            <p className="text-gray-500 text-lg leading-relaxed mb-8">
+              Partout en Île-de-France, de jour comme de nuit. Panne moteur, batterie à plat, crevaison, accident — notre équipe intervient en moins de 45 minutes.
+            </p>
+            <div className="space-y-3 mb-8">
+              {[
+                'Intervention sur route, autoroute et zones urbaines',
+                'Remorquage et rapatriement véhicule',
+                'Diagnostic sur place',
+                'Disponible jours fériés inclus',
+              ].map(l => (
+                <div key={l} className="flex items-center gap-3 text-sm text-gray-700">
+                  <span className="w-5 h-5 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>
+                  {l}
+                </div>
+              ))}
+            </div>
+            <div className="flex gap-3">
+              <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-7 py-4 rounded-2xl text-lg transition-all hover:shadow-xl hover:shadow-red-200 flex items-center gap-2">
+                📞 <span>06 50 50 01 75</span>
+              </a>
+              <Link href="/depannage" className="border border-gray-200 hover:border-red-300 text-gray-700 hover:text-red-600 font-semibold px-6 py-4 rounded-2xl transition-all text-sm flex items-center">
+                En savoir plus →
+              </Link>
+            </div>
+          </div>
+          {/* Zones */}
+          <div className="bg-gray-950 rounded-3xl p-8 text-white">
+            <h3 className="font-black text-xl mb-6">📍 Zones couvertes</h3>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { code: '75', nom: 'Paris' },
+                { code: '92', nom: 'Hauts-de-Seine' },
+                { code: '93', nom: 'Seine-Saint-Denis' },
+                { code: '94', nom: 'Val-de-Marne' },
+                { code: '77', nom: 'Seine-et-Marne' },
+                { code: '91', nom: 'Essonne' },
+                { code: '78', nom: 'Yvelines' },
+                { code: '95', nom: 'Val-d\'Oise' },
+              ].map(z => (
+                <Link key={z.code} href={`/zones/${z.code === '75' ? 'paris' : z.nom.toLowerCase().replace(/['']/g, '-').replace(/é/g, 'e').replace(/è/g, 'e').replace(/ /g, '-')}`}
+                  className="flex items-center gap-3 bg-white/6 hover:bg-red-600/20 border border-white/8 hover:border-red-500/30 rounded-xl px-4 py-2.5 transition-all group">
+                  <span className="bg-red-600 text-white text-xs font-black w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0">{z.code}</span>
+                  <span className="text-sm text-gray-300 group-hover:text-white transition-colors font-medium">{z.nom}</span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── VENTE APERÇU ── */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">Nos services — IDF</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Un expert automobile disponible partout en Île-de-France pour tous vos besoins.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {services.map((s) => (
-              <Link key={s.title} href={s.href} className={`group bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border ${s.hot ? 'border-red-200' : 'border-gray-100'} relative`}>
-                {s.hot && <div className="absolute top-4 right-4 bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full">URGENT</div>}
-                <div className="text-5xl mb-5">{s.icon}</div>
-                <h3 className={`font-bold text-lg mb-2 ${s.hot ? 'text-red-600' : 'text-gray-900'}`}>{s.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed">{s.desc}</p>
-                <div className="mt-5 text-sm font-semibold text-gray-400 group-hover:text-red-600 flex items-center gap-1 transition-colors">En savoir plus →</div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* URGENCE */}
-      <section className="bg-red-600 py-16 px-4">
-        <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-8 text-white">
-          <div className="text-center md:text-left">
-            <div className="text-5xl mb-3">🚨</div>
-            <h2 className="text-3xl font-black mb-2">Panne ou accident en IDF ?</h2>
-            <p className="text-red-100 text-lg">On arrive partout en Île-de-France — 24h/24, 7j/7.</p>
-          </div>
-          <div className="flex-shrink-0 text-center">
-            <a href="tel:0650500175" className="block bg-white text-red-600 font-black text-2xl px-12 py-5 rounded-2xl hover:bg-red-50 transition-all hover:shadow-2xl mb-3">
-              📞 06 50 50 01 75
-            </a>
-            <p className="text-red-200 text-sm">Réponse immédiate 24h/24</p>
-          </div>
-        </div>
-      </section>
-
-      {/* ZONES */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-14">
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">Zones d&apos;intervention</h2>
-            <p className="text-gray-500 max-w-xl mx-auto">Nous couvrons les <strong>8 départements</strong> d&apos;Île-de-France. Cliquez sur votre zone.</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {deps.map((d) => (
-              <Link key={d.code} href={`/zones/${d.slug}`} className="group bg-gray-50 hover:bg-red-600 border border-gray-100 hover:border-red-600 rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="bg-red-600 group-hover:bg-white text-white group-hover:text-red-600 font-black w-12 h-12 rounded-xl flex items-center justify-center text-sm transition-colors">
-                    {d.code}
-                  </div>
-                  <h3 className="font-black text-gray-900 group-hover:text-white transition-colors">{d.nom}</h3>
-                </div>
-                <ul className="space-y-1">
-                  {d.villes.map(v => (
-                    <li key={v} className="text-xs text-gray-500 group-hover:text-red-100 flex items-center gap-1.5 transition-colors">
-                      <span className="w-1 h-1 bg-gray-300 group-hover:bg-red-200 rounded-full transition-colors" />
-                      {v}
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-4 text-xs font-bold text-red-600 group-hover:text-white flex items-center gap-1 transition-colors">
-                  Voir ma zone →
-                </div>
-              </Link>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <Link href="/zones" className="inline-flex items-center gap-2 bg-gray-900 hover:bg-red-600 text-white font-bold px-8 py-3 rounded-full transition-all">
-              Voir toutes les zones →
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+            <div>
+              <div className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Achat · Vente · Importation</div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900">Ils nous ont fait confiance</h2>
+            </div>
+            <Link href="/vente" className="text-sm font-bold text-gray-500 hover:text-red-600 flex items-center gap-1 transition-colors">
+              Voir tout → 
             </Link>
           </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 mb-10">
+            {[
+              { img: '/voitures/car1.jpg', label: 'Renault Clio', badge: 'Livré & garanti' },
+              { img: '/voitures/car4.jpg', label: 'Volkswagen Polo GTI', badge: 'Livré & contrôlé' },
+              { img: '/voitures/car6.jpg', label: 'Renault Clio', badge: 'Livré & révisé' },
+            ].map((v, i) => (
+              <Link key={i} href="/vente" className="group relative bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100">
+                <div className="relative h-48 overflow-hidden">
+                  <Image src={v.img} alt={v.label} fill className="object-cover group-hover:scale-105 transition-transform duration-700" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                  <div className="absolute bottom-3 left-3">
+                    <span className="bg-green-500 text-white text-xs font-bold px-2.5 py-1 rounded-full">✅ {v.badge}</span>
+                  </div>
+                </div>
+                <div className="p-4 flex items-center justify-between">
+                  <span className="font-bold text-gray-900">{v.label}</span>
+                  <span className="text-red-600 text-sm font-bold group-hover:gap-2 transition-all">Voir →</span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* 3 services vente */}
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { icon: '🔍', t: 'Chercheur sur-mesure', d: 'Vous décrivez, on trouve. Budget, type, marque, km — on s\'occupe de tout.', href: '/vente#chercheur' },
+              { icon: '✈️', t: 'Importation', d: 'Allemagne, Belgique, monde entier. Transport, homologation, livraison gérés.', href: '/vente#importation' },
+              { icon: '🔄', t: 'Reprise de véhicule', d: 'Estimation gratuite. Reprise immédiate ou déduction sur votre prochain achat.', href: '/contact' },
+            ].map(s => (
+              <Link key={s.t} href={s.href} className="group bg-white rounded-2xl p-6 border border-gray-100 hover:border-red-200 hover:shadow-md transition-all">
+                <div className="text-3xl mb-3">{s.icon}</div>
+                <h3 className="font-bold text-gray-900 mb-2">{s.t}</h3>
+                <p className="text-gray-500 text-sm leading-relaxed">{s.d}</p>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* AVIS GOOGLE */}
-      <section className="py-20 px-4 bg-gray-50">
+
+      {/* ── SERVICES EXPERTISE ── */}
+      <section className="py-20 px-4 bg-white">
         <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-12">
+            <div>
+              <div className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Expertise · Inspection · Entretien</div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900">Nos services auto</h2>
+            </div>
+            <Link href="/services" className="text-sm font-bold text-gray-500 hover:text-red-600 flex items-center gap-1 transition-colors">
+              Voir tout →
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {[
+              { icon: '🔍', t: 'Inspection avant achat', d: 'Rapport complet avant d\'acheter un véhicule d\'occasion. Zéro mauvaise surprise.', href: '/services' },
+              { icon: '⚙️', t: 'Diagnostic électronique', d: 'Lecture codes défauts multimarque. Identification précise de la panne.', href: '/services' },
+              { icon: '🔧', t: 'Entretien & Réparation', d: 'Vidange, freins, distribution, clim. Toutes marques, prix transparents.', href: '/services' },
+              { icon: '🛞', t: 'Pneumatiques', d: 'Fourniture, montage, équilibrage. Toutes marques disponibles.', href: '/services' },
+            ].map(s => (
+              <Link key={s.t} href={s.href} className="group bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:bg-white hover:shadow-lg hover:border-red-100 transition-all duration-300 hover:-translate-y-0.5">
+                <div className="text-4xl mb-4">{s.icon}</div>
+                <h3 className="font-bold text-gray-900 mb-2 text-base">{s.t}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{s.d}</p>
+                <div className="mt-4 text-red-600 text-xs font-bold flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+                  En savoir plus →
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+
+      {/* ── AVIS GOOGLE ── */}
+      <section className="py-20 px-4 bg-gray-950 text-white">
+        <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
             <div className="text-yellow-400 text-3xl mb-3">⭐⭐⭐⭐⭐</div>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-2">Ils nous ont fait confiance</h2>
-            <p className="text-gray-500">42 avis — Note <strong>5/5</strong> sur Google</p>
+            <h2 className="text-3xl font-black mb-1">42 clients satisfaits</h2>
+            <p className="text-gray-400">Note <strong className="text-white">5/5</strong> sur Google</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {avisGoogle.map((a) => (
-              <div key={a.nom} className="bg-white rounded-2xl p-7 border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="flex items-start justify-between mb-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+            {avis.map(a => (
+              <div key={a.nom} className="bg-white/6 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors">
+                <div className="flex justify-between items-start mb-4">
                   <div>
-                    <div className="font-bold text-gray-900">{a.nom}</div>
-                    <div className="text-xs text-gray-400 mt-0.5">{a.date}</div>
+                    <div className="font-bold text-white">{a.nom}</div>
+                    <div className="text-xs text-gray-500 mt-0.5">{a.date}</div>
                   </div>
-                  <div className="flex items-center gap-1 bg-gray-50 px-2 py-1 rounded-lg border border-gray-100">
-                    <span className="text-yellow-400 text-sm">⭐</span>
-                    <span className="font-bold text-sm">{a.note}/5</span>
-                  </div>
+                  <div className="text-yellow-400 text-sm">⭐ {a.note}/5</div>
                 </div>
-                <p className="text-gray-600 text-sm leading-relaxed italic">&quot;{a.texte}&quot;</p>
-                <div className="mt-4 flex items-center gap-1.5 text-xs text-gray-400">
+                <p className="text-gray-400 text-sm leading-relaxed italic">&quot;{a.texte}&quot;</p>
+                <div className="mt-4 flex items-center gap-1.5 text-xs text-gray-600">
                   <span className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xs">G</span>
                   Avis Google vérifié
                 </div>
@@ -205,21 +289,28 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA FINAL */}
-      <section className="py-20 px-4 bg-gray-950 text-white text-center">
-        <h2 className="text-3xl md:text-4xl font-black mb-4">Où que vous soyez en IDF, on arrive.</h2>
-        <p className="text-gray-400 text-lg mb-10 max-w-xl mx-auto">
-          Paris, banlieue, autoroutes, zones rurales — aucun endroit n&apos;est trop loin.
-        </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-bold px-10 py-4 rounded-2xl text-xl transition-all hover:shadow-2xl hover:shadow-red-600/30">
-            📞 06 50 50 01 75
-          </a>
-          <Link href="/contact" className="bg-white/10 hover:bg-white/20 border border-white/20 text-white font-semibold px-10 py-4 rounded-2xl text-lg transition-all">
-            Envoyer un message
-          </Link>
+
+      {/* ── CTA FINAL ── */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <Image src="/logo.jpg" alt="RM Automotive" width={72} height={72} className="mx-auto rounded-2xl mb-6 shadow-lg" />
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+            Parlez-nous de votre projet
+          </h2>
+          <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
+            Dépannage, achat d&apos;un véhicule, entretien ou importation — on est là pour vous.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-9 py-4 rounded-2xl text-xl transition-all hover:shadow-2xl hover:shadow-red-200 flex items-center justify-center gap-2">
+              📞 06 50 50 01 75
+            </a>
+            <Link href="/contact" className="border border-gray-200 hover:border-red-300 hover:text-red-600 text-gray-700 font-semibold px-9 py-4 rounded-2xl text-lg transition-all">
+              Nous écrire →
+            </Link>
+          </div>
         </div>
       </section>
+
       <div className="h-16 md:hidden" />
     </>
   )
