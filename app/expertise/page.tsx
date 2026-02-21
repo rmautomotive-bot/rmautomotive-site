@@ -3,9 +3,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 const partenairesLogos = [
-  { nom: 'Macadam Europe', img: '/partenaires/macadam.svg', bg: '#111111', width: 180, height: 52 },
-  { nom: 'Trustoo', img: '/partenaires/trustoo.png', bg: '#1a1a2e', width: 56, height: 56 },
-  { nom: 'Eurotol', img: '/partenaires/eurotol.svg', bg: '#003087', width: 160, height: 50 },
+  { nom: 'Macadam Europe', img: '/partenaires/macadam.jpg', bg: '#ffffff', width: 220, height: 113, border: true },
+  { nom: 'Trustoo', img: '/partenaires/trustoo.png', bg: '#ffffff', width: 60, height: 60, border: true },
+  { nom: 'Eurotol', img: '/partenaires/eurotol.svg', bg: '#003087', width: 160, height: 50, border: false },
 ]
 
 export const metadata: Metadata = {
@@ -132,7 +132,7 @@ export default function Expertise() {
             <span className="text-xs font-bold text-gray-400 uppercase tracking-widest w-full text-center mb-2">Ils nous font confiance</span>
             {partenairesLogos.map(p => (
               <div key={p.nom} title={p.nom}
-                className="flex items-center justify-center rounded-2xl px-6 py-4 hover:scale-105 transition-transform"
+                className={`flex items-center justify-center rounded-2xl px-6 py-4 hover:scale-105 transition-transform ${p.border ? 'border border-gray-200 shadow-sm' : ''}`}
                 style={{ backgroundColor: p.bg }}>
                 <Image src={p.img} alt={p.nom} width={p.width} height={p.height} className="object-contain" />
               </div>
