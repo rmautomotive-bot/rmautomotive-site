@@ -245,6 +245,79 @@ export default function Depannage() {
         </div>
       </section>
 
+      {/* UTILITAIRES */}
+      <section className="py-20 px-4 bg-white overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-600 text-xs font-semibold px-4 py-1.5 rounded-full mb-5">
+              <span>🚐</span> Utilitaires & Engins
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-5 leading-tight">
+              Fourgons, bennes, camions...<br />
+              <span className="text-blue-600">On prend tout.</span>
+            </h2>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Votre flotte pro tombe en panne sur route ? Votre Mercedes Sprinter, Renault Master, ou même votre engin de chantier — on intervient. <strong className="text-gray-800">Aucun véhicule ne nous résiste.</strong>
+            </p>
+          </div>
+
+          {/* Photo grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-14">
+            {[
+              { src: '/utilitaires/chariot-elevateur.jpg', label: 'Chariot élévateur', tag: '🏗️ Engin de chantier' },
+              { src: '/utilitaires/master-logistix.jpg', label: 'Renault Master L3H2', tag: '📦 Fourgon livraison' },
+              { src: '/utilitaires/benne-ford.jpg', label: 'Camion benne', tag: '🪣 Benne TP' },
+              { src: '/utilitaires/sprinter-echelle.jpg', label: 'Mercedes Sprinter', tag: '🔧 Van artisan' },
+              { src: '/utilitaires/benne-jumper.jpg', label: 'Citroën Jumper benne', tag: '🪣 Utilitaire benne' },
+              { src: '/utilitaires/master-gris.jpg', label: 'Renault Master', tag: '🚐 Grand volume' },
+            ].map((v, i) => (
+              <div key={v.src} className={`relative rounded-2xl overflow-hidden group ${i === 0 ? 'col-span-2 md:col-span-1 h-64' : 'h-44'}`}>
+                <Image
+                  src={v.src}
+                  alt={`Dépannage ${v.label} — RM Automotive`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-blue-600/80 backdrop-blur text-white text-xs font-semibold px-2 py-0.5 rounded-full">{v.tag}</span>
+                  <p className="text-white font-bold text-sm mt-0.5">{v.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Avantages pro */}
+          <div className="bg-gray-950 rounded-3xl p-8 md:p-12">
+            <div className="text-center mb-10">
+              <h3 className="text-white text-2xl font-black mb-2">Vous êtes professionnel ?</h3>
+              <p className="text-gray-400">Artisan, livreur, chef de chantier — votre temps c'est de l'argent. On le sait.</p>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5">
+              {[
+                { icon: '⚡', titre: 'Priorité pro', desc: 'Intervention rapide pour minimiser l\'immobilisation de votre véhicule de travail.' },
+                { icon: '📋', titre: 'Rapport d\'intervention', desc: 'Document complet pour votre assurance ou gestionnaire de flotte.' },
+                { icon: '🔄', titre: 'Flotte entière', desc: 'Contrat annuel pour les entreprises avec plusieurs véhicules à gérer.' },
+                { icon: '📞', titre: 'Ligne directe', desc: 'Un numéro, une réponse. Pas de standard, pas d\'attente. On décroche.' },
+              ].map((f) => (
+                <div key={f.titre} className="bg-gray-800/60 border border-gray-700/50 rounded-2xl p-6 hover:border-blue-500/40 transition-colors">
+                  <div className="text-3xl mb-3">{f.icon}</div>
+                  <h4 className="font-bold text-white mb-2 text-sm">{f.titre}</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed">{f.desc}</p>
+                </div>
+              ))}
+            </div>
+            <div className="text-center mt-10">
+              <a href="tel:0650500175" className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all hover:shadow-xl hover:shadow-blue-500/30">
+                📞 Appel pro — 06 50 50 01 75
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
