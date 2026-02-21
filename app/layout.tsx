@@ -104,8 +104,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               </div>
             </Link>
             <nav className="hidden md:flex items-center gap-5">
-              {[['/', 'Accueil'], ['/vente', 'Vente'], ['/expertise', 'Expertise'], ['/depannage', 'Dépannage'], ['/contact', 'Contact']].map(([href, label]) => (
-                <Link key={href} href={href} className={`text-sm font-medium transition-colors ${label === 'Dépannage' ? 'text-red-600 font-bold hover:text-red-700' : 'text-gray-700 hover:text-red-600'}`}>
+              {[['/', 'Accueil'], ['/vente', 'Vente'], ['/expertise', 'Expertise'], ['/depannage', '🚨 Dépannage'], ['/contact', 'Contact']].map(([href, label]) => (
+                <Link key={href} href={href} className={`text-sm font-medium transition-colors ${label.includes('Dépannage') ? 'text-red-600 font-bold hover:text-red-700' : 'text-gray-700 hover:text-red-600'}`}>
                   {label}
                 </Link>
               ))}
@@ -147,7 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div>
               <h3 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">Navigation</h3>
               <ul className="space-y-2 text-sm">
-                {[['/', 'Accueil'], ['/vente', 'Vente / Occasion'], ['/expertise', 'Expertise'], ['/missions', 'Galerie Missions'], ['/blog', 'Blog & Conseils'], ['/zones', 'Zones d\'intervention'], ['/depannage', 'Dépannage 24h/24'], ['/contact', 'Contact']].map(([href, label]) => (
+                {[['/', 'Accueil'], ['/vente', 'Vente / Occasion'], ['/expertise', 'Expertise'], ['/missions', 'Galerie Missions'], ['/blog', 'Blog & Conseils'], ['/zones', 'Zones d\'intervention'], ['/depannage', '🚨 Dépannage 24h/24'], ['/contact', 'Contact']].map(([href, label]) => (
                   <li key={href}><Link href={href} className="hover:text-red-400 transition-colors">{label}</Link></li>
                 ))}
               </ul>
