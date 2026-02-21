@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import QuoteForm from '@/components/QuoteForm'
+import DevisForm from '@/components/DevisForm'
 
 export const metadata: Metadata = {
   title: 'Dépannage Automobile 24h/24 | Partenaire Mondial Assistance — 0€ à avancer | Île-de-France',
@@ -38,8 +38,8 @@ const faq = [
   { q: 'Quel est le délai d\'intervention ?', a: 'En Seine-et-Marne et Île-de-France, notre délai moyen est de 30 à 45 minutes selon votre position et la circulation.' },
   { q: 'Quelle est votre zone d\'intervention ?', a: 'Nous couvrons Mitry-Mory, Villeparisis, Claye-Souilly, Meaux, Roissy, toute la Seine-et-Marne (77) et l\'Île-de-France.' },
   { q: 'Pouvez-vous remorquer ma voiture ?', a: 'Oui, nous disposons d\'équipement de remorquage pour transporter votre véhicule vers notre atelier ou un autre garage de votre choix.' },
-  { q: 'Gérez-vous les véhicules à faible garde au sol ?', a: 'Absolument. Notre plateau est équipé pour charger en toute sécurité les sportives et véhicules surbaissés (Porsche, Ferrari, Lamborghini...). Zéro accrochage garanti.' },
-  { q: 'Prenez-vous en charge les voitures de luxe ?', a: 'Oui. Nous avons l\'habitude de manipuler des véhicules premium : Porsche 911, Rolls-Royce Cullinan, Mercedes AMG, etc. Chaque intervention est réalisée avec le plus grand soin.' },
+  { q: 'Gérez-vous les véhicules à faible garde au sol ?', a: 'Oui. Notre plateau est équipé pour charger les véhicules surbaissés et sportifs en toute sécurité. Contactez-nous pour un devis adapté à votre véhicule.' },
+  { q: 'Prenez-vous en charge les utilitaires et camions ?', a: 'Oui. Fourgons, bennes, Sprinter, Master, Transit — et même certains engins de chantier. Envoyez-nous une demande de devis avec les caractéristiques du véhicule.' },
 ]
 
 export default function Depannage() {
@@ -74,50 +74,31 @@ export default function Depannage() {
         </div>
       </section>
 
-      {/* ASSURANCES — 0€ À AVANCER */}
-      <section className="py-14 px-4 bg-green-900 text-white">
+      {/* ASSURANCES — PARTENAIRE */}
+      <section className="py-14 px-4 bg-gray-900 text-white">
         <div className="max-w-5xl mx-auto">
           <div className="flex flex-col md:flex-row md:items-center gap-8">
             <div className="flex-1">
-              <div className="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4">
-                ✅ Partenaire agréé assurances
+              <div className="inline-flex items-center gap-2 bg-white/10 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4">
+                🤝 Partenaire agréé assurances
               </div>
               <h2 className="text-2xl md:text-3xl font-black mb-3 leading-tight">
-                Votre assurance prend tout en charge.<br />
-                <span className="text-green-300">Vous n&apos;avancez pas un centime.</span>
+                Coordonné avec votre assurance
               </h2>
-              <p className="text-green-100 text-sm leading-relaxed">
-                Nous sommes partenaires de <strong>Mondial Assistance</strong> et agréés par la quasi-totalité des assureurs. Appelez-nous, on s&apos;occupe de tout avec votre assurance directement.
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Partenaire de <strong className="text-white">Mondial Assistance</strong> et agréé par la majorité des assureurs. Si vous bénéficiez d&apos;une garantie assistance, nous pouvons coordonner l&apos;intervention. Appelez-nous pour vérifier vos droits.
               </p>
             </div>
             <div className="flex-1">
               <div className="flex flex-wrap gap-2">
                 {['Mondial Assistance', 'AXA Assistance', 'MAAF', 'MACIF', 'Allianz', 'GMF', 'Groupama', 'MATMUT', 'Direct Assurance', 'AREAS', 'MMA', 'MACSF'].map((a) => (
-                  <span key={a} className="bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20">
+                  <span key={a} className="bg-white/10 text-gray-300 text-xs font-semibold px-3 py-1.5 rounded-full border border-white/15">
                     {a}
                   </span>
                 ))}
               </div>
-              <p className="text-green-300 text-xs mt-4 font-medium">+ tous les autres assureurs. Si votre assureur n&apos;est pas listé, appelez-nous quand même.</p>
+              <p className="text-gray-500 text-xs mt-4">Selon votre contrat, des conditions peuvent s&apos;appliquer. Renseignez-vous directement.</p>
             </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
-            {[
-              { n: '1', t: 'Vous appelez', d: 'Décrivez la panne et donnez votre position. Ayez votre carte verte à portée.' },
-              { n: '2', t: 'On gère votre assurance', d: 'On contacte votre assureur directement. Vous n\'avez rien à faire.' },
-              { n: '3', t: 'Intervention gratuite', d: 'On intervient, votre assurance règle. 0€ de votre poche.' },
-            ].map((s) => (
-              <div key={s.n} className="bg-white/10 border border-white/15 rounded-2xl p-5">
-                <div className="w-8 h-8 bg-white text-green-900 font-black text-sm rounded-lg flex items-center justify-center mb-3">{s.n}</div>
-                <h3 className="font-bold text-white text-sm mb-1">{s.t}</h3>
-                <p className="text-green-200 text-xs leading-relaxed">{s.d}</p>
-              </div>
-            ))}
-          </div>
-          <div className="text-center mt-8">
-            <a href="tel:0650500175" className="inline-flex items-center gap-3 bg-white text-green-900 font-black text-xl px-10 py-4 rounded-2xl hover:bg-green-50 transition-all hover:shadow-2xl">
-              📞 06 50 50 01 75 — Intervention gratuite
-            </a>
           </div>
         </div>
       </section>
@@ -368,6 +349,32 @@ export default function Depannage() {
         </div>
       </section>
 
+      {/* CONCESSIONNAIRES */}
+      <section className="py-14 px-4 bg-white border-y border-gray-100">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-3">Ils nous font confiance</p>
+          <h2 className="text-2xl font-black text-gray-900 mb-8">Partenaire des grands concessionnaires d&apos;Île-de-France</h2>
+          <div className="flex flex-wrap items-center justify-center gap-3">
+            {[
+              { nom: 'RENAULT', couleur: 'text-yellow-600', bg: 'bg-yellow-50 border-yellow-200' },
+              { nom: 'PEUGEOT', couleur: 'text-blue-700', bg: 'bg-blue-50 border-blue-200' },
+              { nom: 'CITROËN', couleur: 'text-red-600', bg: 'bg-red-50 border-red-200' },
+              { nom: 'TOYOTA', couleur: 'text-red-700', bg: 'bg-red-50 border-red-200' },
+              { nom: 'VOLKSWAGEN', couleur: 'text-blue-800', bg: 'bg-blue-50 border-blue-200' },
+              { nom: 'PORSCHE', couleur: 'text-gray-800', bg: 'bg-gray-50 border-gray-200' },
+              { nom: 'MERCEDES', couleur: 'text-gray-700', bg: 'bg-gray-50 border-gray-200' },
+              { nom: 'BMW', couleur: 'text-blue-800', bg: 'bg-blue-50 border-blue-200' },
+              { nom: 'FORD', couleur: 'text-blue-700', bg: 'bg-blue-50 border-blue-200' },
+              { nom: 'AUDI', couleur: 'text-gray-800', bg: 'bg-gray-50 border-gray-200' },
+            ].map((b) => (
+              <div key={b.nom} className={`border rounded-xl px-5 py-2.5 ${b.bg}`}>
+                <span className={`font-black text-sm tracking-wider ${b.couleur}`}>{b.nom}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-3xl mx-auto">
@@ -416,7 +423,7 @@ export default function Depannage() {
                 ))}
               </div>
             </div>
-            <QuoteForm />
+            <DevisForm />
           </div>
         </div>
       </section>

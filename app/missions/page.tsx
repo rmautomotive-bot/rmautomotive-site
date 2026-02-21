@@ -128,12 +128,12 @@ export default function Missions() {
         </div>
       </section>
 
-      {/* ASSURANCE BANNER */}
-      <section className="py-12 px-4 bg-green-900 text-white">
+      {/* CONCESSIONNAIRES & ASSURANCES BANNER */}
+      <section className="py-12 px-4 bg-gray-950 text-white">
         <div className="max-w-4xl mx-auto flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
           <div className="flex-1">
-            <h2 className="text-2xl font-black mb-2">✅ Toutes ces interventions — 0€ à avancer</h2>
-            <p className="text-green-200 text-sm">Partenaire Mondial Assistance, AXA, MAAF, MACIF et 8 autres assureurs. Votre assurance couvre, on s&apos;occupe du reste.</p>
+            <h2 className="text-2xl font-black mb-2">🤝 Partenaire concessionnaires & assurances</h2>
+            <p className="text-gray-400 text-sm">Renault, Peugeot, Toyota, Porsche et bien d&apos;autres nous confient leurs véhicules. Demandez un devis pour votre situation.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
             <a href="tel:0650500175" className="bg-white text-green-900 font-black px-6 py-3.5 rounded-2xl text-base hover:bg-green-50 transition-all">

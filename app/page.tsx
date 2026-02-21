@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const avis = [
   { nom: 'Laureen S.', note: 5, texte: 'Parfait. Très réactif et efficace pour le dépannage. Arrivé en 30 minutes, problème résolu sur place. Je recommande vivement !', date: 'il y a 1 mois', type: 'Dépannage' },
-  { nom: 'Hassan B.', note: 5, texte: 'Fiable, réactif et flexible. RM Automotive est très bien équipé. Prise en charge par mon assurance, je n\'ai rien avancé. Service top !', date: 'il y a 11 mois', type: 'Assistance' },
+  { nom: 'Hassan B.', note: 5, texte: 'Fiable, réactif et flexible. RM Automotive est très bien équipé. Service top !', date: 'il y a 11 mois', type: 'Dépannage' },
   { nom: 'Florence B.', note: 5, texte: "L'accueil, le service et la finalisation de l'achat se sont déroulés à merveille. Véhicule livré en parfait état, conforme à la description.", date: 'il y a 4 mois', type: 'Vente' },
-  { nom: 'Karim T.', note: 5, texte: "Dépannage de mon utilitaire sur l'A1 un dimanche soir. Arrivée ultra rapide, très pro. Intervention prise en charge par Mondial Assistance.", date: 'il y a 2 mois', type: 'Utilitaire' },
+  { nom: 'Karim T.', note: 5, texte: "Dépannage de mon utilitaire sur l'A1 un dimanche soir. Arrivée ultra rapide, très pro. Je recommande à toutes les entreprises.", date: 'il y a 2 mois', type: 'Utilitaire' },
   { nom: 'Sarah M.', note: 5, texte: "Intervention sur ma Porsche, chargement délicat mais réalisé avec soin. Aucune rayure, plateau impeccable. Merci !", date: 'il y a 3 semaines', type: 'Prestige' },
   { nom: 'Marc D.', note: 5, texte: "Excellent service. Batterie à plat à Paris à 2h du matin, ils ont répondu immédiatement. En moins de 40 min c'était réglé.", date: 'il y a 6 mois', type: 'Urgence nuit' },
 ]
@@ -39,8 +39,8 @@ export default function Home() {
             Votre expert automobile en Île-de-France.<br/>
             Dépannage, vente de véhicules, inspection &amp; entretien.
           </p>
-          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 text-green-400 text-sm font-semibold px-5 py-2 rounded-full mb-8">
-            ✅ Partenaire Mondial Assistance &amp; assurances — <strong className="text-white">0€ à avancer</strong>
+          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-yellow-400 text-sm font-semibold px-5 py-2 rounded-full mb-8">
+            ⭐ Partenaire agréé concessionnaires &amp; assurances — Île-de-France
           </div>
 
           {/* ── 3 PORTES ── */}
@@ -56,12 +56,9 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="text-2xl font-black text-white mb-2">Dépannage</h2>
-              <p className="text-red-100 text-sm leading-relaxed mb-3 flex-1">
-                Panne, accident, batterie, crevaison. On intervient partout en IDF en moins de 45 min, jour et nuit.
+              <p className="text-red-100 text-sm leading-relaxed mb-6 flex-1">
+                Panne, accident, batterie, crevaison. On intervient partout en IDF en moins de 45 min, jour et nuit. Tout type de véhicule.
               </p>
-              <div className="bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-xl mb-4 flex items-center gap-2">
-                ✅ Partenaire Mondial Assistance — 0€ à avancer
-              </div>
               <div className="bg-white text-red-600 font-black text-lg py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
                 📞 06 50 50 01 75
               </div>
@@ -114,7 +111,7 @@ export default function Home() {
             { v: '< 45 min', l: 'Délai intervention' },
             { v: '8 dép.', l: 'Île-de-France couverte' },
             { v: '24h/7j', l: 'Dépannage nonstop' },
-            { v: '0€', l: 'À avancer (assurance)' },
+            { v: '+500', l: 'Interventions / an' },
             { v: '100%', l: 'Véhicules garantis' },
           ].map(s => (
             <div key={s.l}>
@@ -153,9 +150,9 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-8">
-              <p className="text-green-800 font-bold text-sm mb-2">✅ Pris en charge par votre assurance — 0€ à avancer</p>
-              <p className="text-green-700 text-xs leading-relaxed">Partenaire <strong>Mondial Assistance</strong>, AXA, MAAF, MACIF, Allianz et la plupart des assureurs. Nous gérons tout avec votre assurance.</p>
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-4 mb-8">
+              <p className="text-gray-800 font-bold text-sm mb-1">🤝 Partenaire agréé assurances & concessionnaires</p>
+              <p className="text-gray-500 text-xs leading-relaxed">Intervention coordonnée avec votre assureur si vous êtes couvert. Demandez un devis pour connaître les conditions.</p>
             </div>
             <div className="flex gap-3">
               <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-7 py-4 rounded-2xl text-lg transition-all hover:shadow-xl hover:shadow-red-200 flex items-center gap-2">
@@ -192,33 +189,31 @@ export default function Home() {
       </section>
 
 
-      {/* ── ASSURANCES ── */}
+      {/* ── CONCESSIONNAIRES ── */}
       <section className="py-14 px-4 bg-gray-950 text-white">
-        <div className="max-w-5xl mx-auto">
-          <div className="text-center mb-8">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-2">Votre assurance prend tout en charge</h2>
-            <p className="text-gray-400 text-base">Partenaire agréé — vous n&apos;avancez <strong className="text-white">aucun frais</strong></p>
-          </div>
-          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
-            {['Mondial Assistance', 'AXA Assistance', 'MAAF', 'MACIF', 'Allianz', 'GMF', 'Groupama', 'MATMUT', 'Direct Assurance', 'AREAS'].map((a) => (
-              <span key={a} className="bg-white/8 border border-white/12 text-gray-300 text-sm font-medium px-4 py-2 rounded-full hover:bg-green-500/15 hover:border-green-500/30 hover:text-green-400 transition-colors">
-                {a}
-              </span>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div className="max-w-5xl mx-auto text-center">
+          <p className="text-gray-500 text-xs uppercase tracking-widest font-semibold mb-3">Ils nous font confiance</p>
+          <h2 className="text-2xl md:text-3xl font-black mb-2">Partenaire des grands concessionnaires</h2>
+          <p className="text-gray-400 text-sm mb-10 max-w-xl mx-auto">Renault, Peugeot, Toyota, Porsche et bien d&apos;autres nous confient régulièrement leurs véhicules clients pour intervention et transport.</p>
+          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
             {[
-              { icon: '📞', t: '1. Appelez-nous', d: 'Dites-nous où vous êtes et quel est le problème. On s\'occupe du reste.' },
-              { icon: '📋', t: '2. On contacte votre assurance', d: 'Nous gérons directement la prise en charge avec votre assureur.' },
-              { icon: '✅', t: '3. Intervention gratuite', d: 'Vous ne payez rien. L\'assurance règle directement. Zéro stress.' },
-            ].map((s) => (
-              <div key={s.t} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
-                <div className="text-3xl mb-3">{s.icon}</div>
-                <h3 className="font-bold text-white text-sm mb-1">{s.t}</h3>
-                <p className="text-gray-500 text-xs leading-relaxed">{s.d}</p>
+              { nom: 'RENAULT', couleur: 'text-yellow-400', bg: 'bg-yellow-400/10 border-yellow-400/20' },
+              { nom: 'PEUGEOT', couleur: 'text-blue-400', bg: 'bg-blue-400/10 border-blue-400/20' },
+              { nom: 'CITROËN', couleur: 'text-red-400', bg: 'bg-red-400/10 border-red-400/20' },
+              { nom: 'TOYOTA', couleur: 'text-red-500', bg: 'bg-red-500/10 border-red-500/20' },
+              { nom: 'VOLKSWAGEN', couleur: 'text-blue-300', bg: 'bg-blue-300/10 border-blue-300/20' },
+              { nom: 'PORSCHE', couleur: 'text-yellow-500', bg: 'bg-yellow-500/10 border-yellow-500/20' },
+              { nom: 'MERCEDES', couleur: 'text-gray-300', bg: 'bg-gray-300/10 border-gray-300/20' },
+              { nom: 'BMW', couleur: 'text-blue-400', bg: 'bg-blue-400/10 border-blue-400/20' },
+              { nom: 'FORD', couleur: 'text-blue-500', bg: 'bg-blue-500/10 border-blue-500/20' },
+              { nom: 'AUDI', couleur: 'text-gray-300', bg: 'bg-gray-300/10 border-gray-300/20' },
+            ].map((b) => (
+              <div key={b.nom} className={`border rounded-xl px-5 py-2.5 ${b.bg}`}>
+                <span className={`font-black text-sm tracking-wider ${b.couleur}`}>{b.nom}</span>
               </div>
             ))}
           </div>
+          <p className="text-gray-600 text-xs">+ de nombreux autres partenaires en Île-de-France</p>
         </div>
       </section>
 
