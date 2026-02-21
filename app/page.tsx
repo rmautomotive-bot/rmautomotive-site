@@ -71,16 +71,21 @@ export default function Home() {
               </div>
             </Link>
 
-            {/* SERVICES */}
-            <Link href="/services"
+            {/* EXPERTISE */}
+            <Link href="/expertise"
               className="group relative bg-white/6 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col">
-              <div className="bg-white/10 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl mb-6">🔍</div>
+              <div className="bg-white/10 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl mb-4">🔍</div>
               <h2 className="text-2xl font-black text-white mb-2">Expertise · Inspection</h2>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
-                Diagnostic complet, inspection avant achat, entretien toutes marques. Techniciens certifiés.
+              <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+                Diagnostic complet, mesure peinture, check batterie EV, chiffrage dommages. Partenaire <strong className="text-white">Macadam Europe, Trustoo & Eurotol</strong>.
               </p>
+              <div className="flex gap-2 flex-wrap mb-4">
+                {['Macadam Europe', 'Trustoo', 'Eurotol'].map(p => (
+                  <span key={p} className="bg-white/10 text-gray-300 text-xs px-2 py-0.5 rounded-full">{p}</span>
+                ))}
+              </div>
               <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
-                Découvrir nos services <span className="text-red-500">→</span>
+                +1 000 véhicules expertisés <span className="text-red-500">→</span>
               </div>
             </Link>
 
@@ -241,8 +246,8 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
-              { icon: '🔍', t: 'Inspection avant achat', d: 'Rapport complet avant d\'acheter un véhicule d\'occasion. Zéro mauvaise surprise.', href: '/services' },
-              { icon: '⚙️', t: 'Diagnostic électronique', d: 'Lecture codes défauts multimarque. Identification précise de la panne.', href: '/services' },
+              { icon: '🔍', t: 'Inspection avant achat', d: 'Rapport complet avant d\'acheter un véhicule d\'occasion. Zéro mauvaise surprise.', href: '/expertise' },
+              { icon: '⚙️', t: 'Diagnostic & Expertise', d: 'Partenaire Macadam Europe, Trustoo, Eurotol. +1 000 véhicules expertisés.', href: '/expertise' },
               { icon: '🔧', t: 'Entretien & Réparation', d: 'Vidange, freins, distribution, clim. Toutes marques, prix transparents.', href: '/services' },
               { icon: '🛞', t: 'Pneumatiques', d: 'Fourniture, montage, équilibrage. Toutes marques disponibles.', href: '/services' },
             ].map(s => (
