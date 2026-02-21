@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -35,7 +36,8 @@ const faq = [
   { q: 'Quel est le délai d\'intervention ?', a: 'En Seine-et-Marne et Île-de-France, notre délai moyen est de 30 à 45 minutes selon votre position et la circulation.' },
   { q: 'Quelle est votre zone d\'intervention ?', a: 'Nous couvrons Mitry-Mory, Villeparisis, Claye-Souilly, Meaux, Roissy, toute la Seine-et-Marne (77) et l\'Île-de-France.' },
   { q: 'Pouvez-vous remorquer ma voiture ?', a: 'Oui, nous disposons d\'équipement de remorquage pour transporter votre véhicule vers notre atelier ou un autre garage de votre choix.' },
-  { q: 'Êtes-vous distributeur officiel Lorries ?', a: 'Oui, nous sommes distributeur officiel Lorries, ce qui nous permet de proposer des véhicules de qualité et d\'assurer un service de dépannage premium.' },
+  { q: 'Gérez-vous les véhicules à faible garde au sol ?', a: 'Absolument. Notre plateau est équipé pour charger en toute sécurité les sportives et véhicules surbaissés (Porsche, Ferrari, Lamborghini...). Zéro accrochage garanti.' },
+  { q: 'Prenez-vous en charge les voitures de luxe ?', a: 'Oui. Nous avons l\'habitude de manipuler des véhicules premium : Porsche 911, Rolls-Royce Cullinan, Mercedes AMG, etc. Chaque intervention est réalisée avec le plus grand soin.' },
 ]
 
 export default function Depannage() {
@@ -109,8 +111,127 @@ export default function Depannage() {
         </div>
       </section>
 
+      {/* PREMIUM SECTION */}
+      <section className="py-20 px-4 bg-gray-950 text-white overflow-hidden">
+        <div className="max-w-6xl mx-auto">
+          {/* Header */}
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/30 text-yellow-400 text-xs font-semibold px-4 py-1.5 rounded-full mb-5">
+              <span>⭐</span> Transport Premium
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black mb-5 leading-tight">
+              Véhicules de prestige &amp;<br />
+              <span className="text-yellow-400">faible garde au sol</span>
+            </h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Porsche 911, GT4 RS, Rolls-Royce Cullinan, Mercedes AMG... Notre plateau est équipé et notre équipe formée pour manipuler les véhicules les plus précieux avec <strong className="text-white">zéro compromis</strong>.
+            </p>
+          </div>
+
+          {/* Photo grid */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-14">
+            {/* Large image left */}
+            <div className="col-span-2 md:col-span-2 row-span-2 relative rounded-2xl overflow-hidden group h-64 md:h-80">
+              <Image
+                src="/premium/porsche-gt4rs.jpg"
+                alt="Transport Porsche GT4 RS — RM Automotive"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-500"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+              <div className="absolute bottom-4 left-4">
+                <span className="bg-yellow-500 text-black text-xs font-black px-3 py-1 rounded-full">Faible garde au sol</span>
+                <p className="text-white font-bold text-lg mt-1">Porsche GT4 RS</p>
+              </div>
+            </div>
+            {/* Right column images */}
+            {[
+              { src: '/premium/rolls-royce-cullinan.jpg', label: 'Rolls-Royce Cullinan', tag: 'Grand gabarit' },
+              { src: '/premium/porsche-911-turbo.jpg', label: 'Porsche 911 Turbo', tag: 'Sportive subaissée' },
+            ].map((v) => (
+              <div key={v.src} className="relative rounded-2xl overflow-hidden group h-36 md:h-[152px]">
+                <Image
+                  src={v.src}
+                  alt={`Transport ${v.label} — RM Automotive`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 25vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-white/20 backdrop-blur text-white text-xs font-semibold px-2 py-0.5 rounded-full">{v.tag}</span>
+                  <p className="text-white font-bold text-sm mt-0.5">{v.label}</p>
+                </div>
+              </div>
+            ))}
+            {/* Bottom row */}
+            {[
+              { src: '/premium/mercedes-gls-amg.jpg', label: 'Mercedes GLS AMG', tag: 'SUV de luxe' },
+              { src: '/premium/porsche-cayenne.jpg', label: 'Porsche Cayenne', tag: 'Remis en concession' },
+            ].map((v) => (
+              <div key={v.src} className="relative rounded-2xl overflow-hidden group h-36 md:h-44">
+                <Image
+                  src={v.src}
+                  alt={`Transport ${v.label} — RM Automotive`}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute bottom-3 left-3">
+                  <span className="bg-white/20 backdrop-blur text-white text-xs font-semibold px-2 py-0.5 rounded-full">{v.tag}</span>
+                  <p className="text-white font-bold text-sm mt-0.5">{v.label}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Features grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 mb-12">
+            {[
+              { icon: '📐', titre: 'Plateau inclinable', desc: 'Chargement ultra-doux sans racler le bas de caisse — même sur les Porsche GT et 911.' },
+              { icon: '🔒', titre: 'Sanglage 4 points', desc: 'Fixation professionnelle sur jantes. Zéro mouvement, zéro rayure pendant le transport.' },
+              { icon: '🧤', titre: 'Manipulation gantée', desc: 'On ne touche jamais la carrosserie à mains nues. Chaque véhicule est traité comme le vôtre.' },
+              { icon: '📸', titre: 'Photos à la prise en charge', desc: 'On documente l\'état du véhicule avant et après. Votre tranquillité d\'esprit, c\'est notre priorité.' },
+            ].map((f) => (
+              <div key={f.titre} className="bg-gray-800/60 border border-gray-700/50 rounded-2xl p-6 hover:border-yellow-500/40 transition-colors">
+                <div className="text-3xl mb-3">{f.icon}</div>
+                <h3 className="font-bold text-white mb-2 text-sm">{f.titre}</h3>
+                <p className="text-gray-400 text-xs leading-relaxed">{f.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Marques déjà transportées */}
+          <div className="border border-gray-800 rounded-2xl p-8 text-center">
+            <p className="text-gray-500 text-xs uppercase tracking-widest mb-5 font-semibold">Marques déjà prises en charge</p>
+            <div className="flex flex-wrap gap-3 justify-center">
+              {['Porsche', 'Rolls-Royce', 'Mercedes AMG', 'BMW M', 'Ferrari', 'Lamborghini', 'Maserati', 'Audi RS', 'McLaren', 'Bentley'].map((m) => (
+                <span key={m} className="bg-gray-800 text-gray-300 border border-gray-700 px-4 py-1.5 rounded-full text-sm font-medium hover:bg-yellow-500/10 hover:border-yellow-500/50 hover:text-yellow-400 transition-colors">
+                  {m}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* CTA */}
+          <div className="text-center mt-12">
+            <p className="text-gray-400 mb-6">Vous avez un véhicule de prestige à remorquer ? Contactez-nous directement.</p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="tel:0650500175" className="inline-flex items-center justify-center gap-3 bg-yellow-500 hover:bg-yellow-400 text-black font-black text-lg px-8 py-4 rounded-2xl transition-all hover:shadow-xl hover:shadow-yellow-500/30">
+                📞 06 50 50 01 75
+              </a>
+              <a href="https://wa.me/33650500175?text=Bonjour%2C%20j%27ai%20besoin%20d%27un%20d%C3%A9pannage%20pour%20mon%20v%C3%A9hicule%20de%20prestige." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-3 bg-green-600 hover:bg-green-500 text-white font-black text-lg px-8 py-4 rounded-2xl transition-all hover:shadow-xl hover:shadow-green-500/30">
+                💬 WhatsApp direct
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ZONE */}
-      <section className="py-16 px-4 bg-gray-950 text-white">
+      <section className="py-16 px-4 bg-gray-900 text-white">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-black mb-4">Zone d&apos;intervention</h2>
           <p className="text-gray-400 mb-8">Nous intervenons dans toute la <strong className="text-white">Seine-et-Marne (77)</strong> et l&apos;Île-de-France :</p>
