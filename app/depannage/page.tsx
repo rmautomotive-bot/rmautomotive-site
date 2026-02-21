@@ -3,11 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Dépannage Automobile 24h/24 | Mitry-Mory & Seine-et-Marne (77)',
-  description: 'RM Automotive — Dépannage voiture 24h/24 7j/7 à Mitry-Mory et Seine-et-Marne. Panne moteur, batterie, crevaison, accident. Intervention rapide. ☎ 06 50 50 01 75.',
+  title: 'Dépannage Automobile 24h/24 | Partenaire Mondial Assistance — 0€ à avancer | Île-de-France',
+  description: 'RM Automotive — Dépannage voiture 24h/24 7j/7 en Île-de-France. Partenaire Mondial Assistance, AXA, MAAF, MACIF. Intervention prise en charge par votre assurance. 0€ à avancer. ☎ 06 50 50 01 75.',
+  keywords: ['dépannage 24h', 'Mondial Assistance partenaire', 'dépannage assurance', '0 euros à avancer', 'dépannage Seine-et-Marne', 'dépannage Île-de-France', 'remorquage Paris', 'assistance routière 77'],
   openGraph: {
-    title: 'Dépannage Auto 24h/24 — Mitry-Mory (77) | RM Automotive',
-    description: 'Dépannage voiture 24h/24 en Seine-et-Marne. Intervention rapide. 06 50 50 01 75.',
+    title: 'Dépannage Auto 24h/24 — Partenaire Mondial Assistance | RM Automotive',
+    description: 'Intervention prise en charge par votre assurance. 0€ à avancer. Partout en Île-de-France. ☎ 06 50 50 01 75.',
   },
 }
 
@@ -69,6 +70,54 @@ export default function Depannage() {
             </div>
           </a>
           <p className="text-gray-500 text-sm mt-4">Disponible 24h/24 · 7j/7 · Jours fériés inclus</p>
+        </div>
+      </section>
+
+      {/* ASSURANCES — 0€ À AVANCER */}
+      <section className="py-14 px-4 bg-green-900 text-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="flex flex-col md:flex-row md:items-center gap-8">
+            <div className="flex-1">
+              <div className="inline-flex items-center gap-2 bg-white/15 text-white text-xs font-bold px-4 py-1.5 rounded-full mb-4">
+                ✅ Partenaire agréé assurances
+              </div>
+              <h2 className="text-2xl md:text-3xl font-black mb-3 leading-tight">
+                Votre assurance prend tout en charge.<br />
+                <span className="text-green-300">Vous n&apos;avancez pas un centime.</span>
+              </h2>
+              <p className="text-green-100 text-sm leading-relaxed">
+                Nous sommes partenaires de <strong>Mondial Assistance</strong> et agréés par la quasi-totalité des assureurs. Appelez-nous, on s&apos;occupe de tout avec votre assurance directement.
+              </p>
+            </div>
+            <div className="flex-1">
+              <div className="flex flex-wrap gap-2">
+                {['Mondial Assistance', 'AXA Assistance', 'MAAF', 'MACIF', 'Allianz', 'GMF', 'Groupama', 'MATMUT', 'Direct Assurance', 'AREAS', 'MMA', 'MACSF'].map((a) => (
+                  <span key={a} className="bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full border border-white/20">
+                    {a}
+                  </span>
+                ))}
+              </div>
+              <p className="text-green-300 text-xs mt-4 font-medium">+ tous les autres assureurs. Si votre assureur n&apos;est pas listé, appelez-nous quand même.</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-10">
+            {[
+              { n: '1', t: 'Vous appelez', d: 'Décrivez la panne et donnez votre position. Ayez votre carte verte à portée.' },
+              { n: '2', t: 'On gère votre assurance', d: 'On contacte votre assureur directement. Vous n\'avez rien à faire.' },
+              { n: '3', t: 'Intervention gratuite', d: 'On intervient, votre assurance règle. 0€ de votre poche.' },
+            ].map((s) => (
+              <div key={s.n} className="bg-white/10 border border-white/15 rounded-2xl p-5">
+                <div className="w-8 h-8 bg-white text-green-900 font-black text-sm rounded-lg flex items-center justify-center mb-3">{s.n}</div>
+                <h3 className="font-bold text-white text-sm mb-1">{s.t}</h3>
+                <p className="text-green-200 text-xs leading-relaxed">{s.d}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <a href="tel:0650500175" className="inline-flex items-center gap-3 bg-white text-green-900 font-black text-xl px-10 py-4 rounded-2xl hover:bg-green-50 transition-all hover:shadow-2xl">
+              📞 06 50 50 01 75 — Intervention gratuite
+            </a>
+          </div>
         </div>
       </section>
 

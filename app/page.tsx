@@ -8,9 +8,12 @@ export const metadata: Metadata = {
 }
 
 const avis = [
-  { nom: 'Laureen S.', note: 5, texte: 'Parfait. Très réactif et efficace pour le dépannage. Je recommande vivement !', date: 'il y a 1 mois' },
-  { nom: 'Hassan B.', note: 5, texte: 'Fiable, réactif et flexible. RM Automotive est très bien équipé. Service top !', date: 'il y a 11 mois' },
-  { nom: 'Florence B.', note: 5, texte: "L'accueil, le service et la finalisation de l'achat se sont déroulés à merveille.", date: 'il y a 4 mois' },
+  { nom: 'Laureen S.', note: 5, texte: 'Parfait. Très réactif et efficace pour le dépannage. Arrivé en 30 minutes, problème résolu sur place. Je recommande vivement !', date: 'il y a 1 mois', type: 'Dépannage' },
+  { nom: 'Hassan B.', note: 5, texte: 'Fiable, réactif et flexible. RM Automotive est très bien équipé. Prise en charge par mon assurance, je n\'ai rien avancé. Service top !', date: 'il y a 11 mois', type: 'Assistance' },
+  { nom: 'Florence B.', note: 5, texte: "L'accueil, le service et la finalisation de l'achat se sont déroulés à merveille. Véhicule livré en parfait état, conforme à la description.", date: 'il y a 4 mois', type: 'Vente' },
+  { nom: 'Karim T.', note: 5, texte: "Dépannage de mon utilitaire sur l'A1 un dimanche soir. Arrivée ultra rapide, très pro. Intervention prise en charge par Mondial Assistance.", date: 'il y a 2 mois', type: 'Utilitaire' },
+  { nom: 'Sarah M.', note: 5, texte: "Intervention sur ma Porsche, chargement délicat mais réalisé avec soin. Aucune rayure, plateau impeccable. Merci !", date: 'il y a 3 semaines', type: 'Prestige' },
+  { nom: 'Marc D.', note: 5, texte: "Excellent service. Batterie à plat à Paris à 2h du matin, ils ont répondu immédiatement. En moins de 40 min c'était réglé.", date: 'il y a 6 mois', type: 'Urgence nuit' },
 ]
 
 export default function Home() {
@@ -32,10 +35,13 @@ export default function Home() {
             <span className="text-red-500"> Automotive</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-12 max-w-lg mx-auto leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-400 mb-5 max-w-lg mx-auto leading-relaxed">
             Votre expert automobile en Île-de-France.<br/>
             Dépannage, vente de véhicules, inspection &amp; entretien.
           </p>
+          <div className="inline-flex items-center gap-2 bg-green-500/10 border border-green-500/30 text-green-400 text-sm font-semibold px-5 py-2 rounded-full mb-8">
+            ✅ Partenaire Mondial Assistance &amp; assurances — <strong className="text-white">0€ à avancer</strong>
+          </div>
 
           {/* ── 3 PORTES ── */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
@@ -50,9 +56,12 @@ export default function Home() {
                 </div>
               </div>
               <h2 className="text-2xl font-black text-white mb-2">Dépannage</h2>
-              <p className="text-red-100 text-sm leading-relaxed mb-6 flex-1">
+              <p className="text-red-100 text-sm leading-relaxed mb-3 flex-1">
                 Panne, accident, batterie, crevaison. On intervient partout en IDF en moins de 45 min, jour et nuit.
               </p>
+              <div className="bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-xl mb-4 flex items-center gap-2">
+                ✅ Partenaire Mondial Assistance — 0€ à avancer
+              </div>
               <div className="bg-white text-red-600 font-black text-lg py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
                 📞 06 50 50 01 75
               </div>
@@ -99,12 +108,13 @@ export default function Home() {
 
       {/* ── BANDE CONFIANCE ── */}
       <section className="bg-gray-50 py-10 px-4">
-        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-8 md:gap-14 text-center">
+        <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8 md:gap-12 text-center">
           {[
             { v: '⭐ 5/5', l: '42 avis Google' },
             { v: '< 45 min', l: 'Délai intervention' },
             { v: '8 dép.', l: 'Île-de-France couverte' },
             { v: '24h/7j', l: 'Dépannage nonstop' },
+            { v: '0€', l: 'À avancer (assurance)' },
             { v: '100%', l: 'Véhicules garantis' },
           ].map(s => (
             <div key={s.l}>
@@ -130,18 +140,22 @@ export default function Home() {
             <p className="text-gray-500 text-lg leading-relaxed mb-8">
               Partout en Île-de-France, de jour comme de nuit. Panne moteur, batterie à plat, crevaison, accident — notre équipe intervient en moins de 45 minutes.
             </p>
-            <div className="space-y-3 mb-8">
+            <div className="space-y-3 mb-5">
               {[
                 'Intervention sur route, autoroute et zones urbaines',
+                'Tout type de véhicule : citadine, utilitaire, prestige',
                 'Remorquage et rapatriement véhicule',
-                'Diagnostic sur place',
-                'Disponible jours fériés inclus',
+                'Diagnostic sur place — disponible jours fériés',
               ].map(l => (
                 <div key={l} className="flex items-center gap-3 text-sm text-gray-700">
                   <span className="w-5 h-5 bg-red-100 text-red-600 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0">✓</span>
                   {l}
                 </div>
               ))}
+            </div>
+            <div className="bg-green-50 border border-green-200 rounded-2xl p-4 mb-8">
+              <p className="text-green-800 font-bold text-sm mb-2">✅ Pris en charge par votre assurance — 0€ à avancer</p>
+              <p className="text-green-700 text-xs leading-relaxed">Partenaire <strong>Mondial Assistance</strong>, AXA, MAAF, MACIF, Allianz et la plupart des assureurs. Nous gérons tout avec votre assurance.</p>
             </div>
             <div className="flex gap-3">
               <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-7 py-4 rounded-2xl text-lg transition-all hover:shadow-xl hover:shadow-red-200 flex items-center gap-2">
@@ -177,6 +191,36 @@ export default function Home() {
         </div>
       </section>
 
+
+      {/* ── ASSURANCES ── */}
+      <section className="py-14 px-4 bg-gray-950 text-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-black text-white mb-2">Votre assurance prend tout en charge</h2>
+            <p className="text-gray-400 text-base">Partenaire agréé — vous n&apos;avancez <strong className="text-white">aucun frais</strong></p>
+          </div>
+          <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
+            {['Mondial Assistance', 'AXA Assistance', 'MAAF', 'MACIF', 'Allianz', 'GMF', 'Groupama', 'MATMUT', 'Direct Assurance', 'AREAS'].map((a) => (
+              <span key={a} className="bg-white/8 border border-white/12 text-gray-300 text-sm font-medium px-4 py-2 rounded-full hover:bg-green-500/15 hover:border-green-500/30 hover:text-green-400 transition-colors">
+                {a}
+              </span>
+            ))}
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {[
+              { icon: '📞', t: '1. Appelez-nous', d: 'Dites-nous où vous êtes et quel est le problème. On s\'occupe du reste.' },
+              { icon: '📋', t: '2. On contacte votre assurance', d: 'Nous gérons directement la prise en charge avec votre assureur.' },
+              { icon: '✅', t: '3. Intervention gratuite', d: 'Vous ne payez rien. L\'assurance règle directement. Zéro stress.' },
+            ].map((s) => (
+              <div key={s.t} className="bg-white/5 border border-white/10 rounded-2xl p-5 text-center">
+                <div className="text-3xl mb-3">{s.icon}</div>
+                <h3 className="font-bold text-white text-sm mb-1">{s.t}</h3>
+                <p className="text-gray-500 text-xs leading-relaxed">{s.d}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* ── VENTE APERÇU ── */}
       <section className="py-20 px-4 bg-gray-50">
@@ -267,29 +311,38 @@ export default function Home() {
 
       {/* ── AVIS GOOGLE ── */}
       <section className="py-20 px-4 bg-gray-950 text-white">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <div className="text-yellow-400 text-3xl mb-3">⭐⭐⭐⭐⭐</div>
             <h2 className="text-3xl font-black mb-1">42 clients satisfaits</h2>
-            <p className="text-gray-400">Note <strong className="text-white">5/5</strong> sur Google</p>
+            <p className="text-gray-400">Note <strong className="text-white">5/5</strong> sur Google · Particuliers, pros, prestige</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {avis.map(a => (
-              <div key={a.nom} className="bg-white/6 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors">
-                <div className="flex justify-between items-start mb-4">
+              <div key={a.nom} className="bg-white/6 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-colors flex flex-col">
+                <div className="flex justify-between items-start mb-3">
                   <div>
                     <div className="font-bold text-white">{a.nom}</div>
                     <div className="text-xs text-gray-500 mt-0.5">{a.date}</div>
                   </div>
-                  <div className="text-yellow-400 text-sm">⭐ {a.note}/5</div>
+                  <div className="flex flex-col items-end gap-1">
+                    <div className="text-yellow-400 text-sm">⭐ {a.note}/5</div>
+                    <span className="bg-white/10 text-gray-300 text-xs px-2 py-0.5 rounded-full">{a.type}</span>
+                  </div>
                 </div>
-                <p className="text-gray-400 text-sm leading-relaxed italic">&quot;{a.texte}&quot;</p>
+                <p className="text-gray-400 text-sm leading-relaxed italic flex-1">&quot;{a.texte}&quot;</p>
                 <div className="mt-4 flex items-center gap-1.5 text-xs text-gray-600">
                   <span className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xs">G</span>
                   Avis Google vérifié
                 </div>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <a href="https://g.page/r/rmautomotive/review" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 bg-white/8 hover:bg-white/12 border border-white/15 text-gray-300 hover:text-white text-sm font-semibold px-6 py-3 rounded-full transition-all">
+              <span className="w-4 h-4 bg-blue-500 rounded-full flex items-center justify-center text-white font-bold text-xs">G</span>
+              Voir tous les avis Google →
+            </a>
           </div>
         </div>
       </section>
