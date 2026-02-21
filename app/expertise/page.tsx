@@ -2,6 +2,12 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 
+const partenairesLogos = [
+  { nom: 'Macadam Europe', img: '/partenaires/macadam.svg', bg: '#111111', width: 180, height: 52 },
+  { nom: 'Trustoo', img: '/partenaires/trustoo.png', bg: '#1a1a2e', width: 56, height: 56 },
+  { nom: 'Eurotol', img: '/partenaires/eurotol.svg', bg: '#003087', width: 160, height: 50 },
+]
+
 export const metadata: Metadata = {
   title: 'Expertise Automobile | Inspection Véhicule | Macadam Europe · Trustoo · Eurotol — RM Automotive',
   description: 'RM Automotive — Expert automobile certifié, partenaire Macadam Europe, Trustoo & Eurotol. +1000 véhicules expertisés. Inspection complète, peinture, carrosserie, batterie, calculateur. ☎ 06 50 50 01 75.',
@@ -119,6 +125,18 @@ export default function Expertise() {
             <p className="text-gray-500 max-w-xl mx-auto">
               Des acteurs majeurs de l&apos;automobile nous sollicitent régulièrement pour leur expertise, preuve de notre sérieux et de notre fiabilité.
             </p>
+          </div>
+
+          {/* Logos bande */}
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-12 py-8 bg-white rounded-3xl border border-gray-100 shadow-sm px-8">
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-widest w-full text-center mb-2">Ils nous font confiance</span>
+            {partenairesLogos.map(p => (
+              <div key={p.nom} title={p.nom}
+                className="flex items-center justify-center rounded-2xl px-6 py-4 hover:scale-105 transition-transform"
+                style={{ backgroundColor: p.bg }}>
+                <Image src={p.img} alt={p.nom} width={p.width} height={p.height} className="object-contain" />
+              </div>
+            ))}
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
