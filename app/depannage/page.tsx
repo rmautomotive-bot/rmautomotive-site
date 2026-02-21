@@ -2,11 +2,12 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import DevisForm from '@/components/DevisForm'
+import BrandLogos from '@/components/BrandLogos'
 
 export const metadata: Metadata = {
-  title: 'Dépannage Automobile 24h/24 | Partenaire Mondial Assistance — 0€ à avancer | Île-de-France',
-  description: 'RM Automotive — Dépannage voiture 24h/24 7j/7 en Île-de-France. Partenaire Mondial Assistance, AXA, MAAF, MACIF. Intervention prise en charge par votre assurance. 0€ à avancer. ☎ 06 50 50 01 75.',
-  keywords: ['dépannage 24h', 'Mondial Assistance partenaire', 'dépannage assurance', '0 euros à avancer', 'dépannage Seine-et-Marne', 'dépannage Île-de-France', 'remorquage Paris', 'assistance routière 77'],
+  title: 'Dépannage Automobile 24h/24 — Île-de-France & Oise | RM Automotive',
+  description: 'RM Automotive — Dépannage voiture 24h/24 7j/7 en Île-de-France et Oise (60). Tout type de véhicule. Partenaire agréé assurances et concessionnaires. Devis gratuit. ☎ 06 50 50 01 75.',
+  keywords: ['dépannage 24h Île-de-France', 'dépannage Oise 60', 'remorquage Paris', 'assistance routière IDF', 'dépannage voiture nuit', 'dépannage utilitaire', 'remorquage plateau'],
   openGraph: {
     title: 'Dépannage Auto 24h/24 — Partenaire Mondial Assistance | RM Automotive',
     description: 'Intervention prise en charge par votre assurance. 0€ à avancer. Partout en Île-de-France. ☎ 06 50 50 01 75.',
@@ -58,15 +59,14 @@ export default function Depannage() {
           </div>
           <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
             Dépannage Automobile<br />
-            <span className="text-red-500">Mitry-Mory & 77</span>
+            <span className="text-red-500">Île-de-France &amp; Oise</span>
           </h1>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
-            Panne sur route, accident, batterie à plat ou crevaison... Intervention rapide en Seine-et-Marne. Disponible à toute heure.
+            Panne sur route, accident, batterie à plat ou crevaison. Tout type de véhicule. Intervention rapide partout en IDF et dans l&apos;Oise, à toute heure.
           </p>
           <a href="tel:0650500175" className="inline-flex items-center gap-4 bg-red-600 hover:bg-red-700 text-white font-black text-2xl px-10 py-5 rounded-2xl transition-all hover:shadow-2xl hover:shadow-red-600/40 animate-pulse-ring">
-            <span>📞</span>
             <div className="text-left">
-              <div className="text-sm font-semibold opacity-80">Appeler l&apos;urgence</div>
+              <div className="text-sm font-semibold opacity-80">Appel urgence 24h/24</div>
               <div>06 50 50 01 75</div>
             </div>
           </a>
@@ -350,28 +350,11 @@ export default function Depannage() {
       </section>
 
       {/* CONCESSIONNAIRES */}
-      <section className="py-14 px-4 bg-white border-y border-gray-100">
+      <section className="py-14 px-4 bg-gray-50 border-y border-gray-100">
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold mb-3">Ils nous font confiance</p>
-          <h2 className="text-2xl font-black text-gray-900 mb-8">Partenaire des grands concessionnaires d&apos;Île-de-France</h2>
-          <div className="flex flex-wrap items-center justify-center gap-3">
-            {[
-              { nom: 'RENAULT', couleur: 'text-yellow-600', bg: 'bg-yellow-50 border-yellow-200' },
-              { nom: 'PEUGEOT', couleur: 'text-blue-700', bg: 'bg-blue-50 border-blue-200' },
-              { nom: 'CITROËN', couleur: 'text-red-600', bg: 'bg-red-50 border-red-200' },
-              { nom: 'TOYOTA', couleur: 'text-red-700', bg: 'bg-red-50 border-red-200' },
-              { nom: 'VOLKSWAGEN', couleur: 'text-blue-800', bg: 'bg-blue-50 border-blue-200' },
-              { nom: 'PORSCHE', couleur: 'text-gray-800', bg: 'bg-gray-50 border-gray-200' },
-              { nom: 'MERCEDES', couleur: 'text-gray-700', bg: 'bg-gray-50 border-gray-200' },
-              { nom: 'BMW', couleur: 'text-blue-800', bg: 'bg-blue-50 border-blue-200' },
-              { nom: 'FORD', couleur: 'text-blue-700', bg: 'bg-blue-50 border-blue-200' },
-              { nom: 'AUDI', couleur: 'text-gray-800', bg: 'bg-gray-50 border-gray-200' },
-            ].map((b) => (
-              <div key={b.nom} className={`border rounded-xl px-5 py-2.5 ${b.bg}`}>
-                <span className={`font-black text-sm tracking-wider ${b.couleur}`}>{b.nom}</span>
-              </div>
-            ))}
-          </div>
+          <h2 className="text-2xl font-black text-gray-900 mb-10">Partenaire des grands concessionnaires d&apos;Île-de-France &amp; Oise</h2>
+          <BrandLogos theme="light" />
         </div>
       </section>
 

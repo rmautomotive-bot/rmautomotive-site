@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import BrandLogos from '@/components/BrandLogos'
 
 export const metadata: Metadata = {
   title: 'RM Automotive — Dépannage 24h/24 · Vente Auto · Expertise | Île-de-France ⭐ 5/5',
@@ -27,7 +28,7 @@ export default function Home() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-gray-300 text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
             <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-            Disponible maintenant · Île-de-France · 24h/24 7j/7
+            Disponible maintenant · Île-de-France &amp; Oise · 24h/24 7j/7
           </div>
 
           <h1 className="text-5xl md:text-7xl font-black leading-[1.04] mb-5 tracking-tight">
@@ -35,12 +36,12 @@ export default function Home() {
             <span className="text-red-500"> Automotive</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-5 max-w-lg mx-auto leading-relaxed">
-            Votre expert automobile en Île-de-France.<br/>
-            Dépannage, vente de véhicules, inspection &amp; entretien.
+          <p className="text-lg md:text-xl text-gray-400 mb-5 max-w-xl mx-auto leading-relaxed">
+            Votre garage expert en Île-de-France &amp; Oise.<br/>
+            Dépannage 24h/24, vente, expertise &amp; entretien — tout type de véhicule.
           </p>
-          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-yellow-400 text-sm font-semibold px-5 py-2 rounded-full mb-8">
-            ⭐ Partenaire agréé concessionnaires &amp; assurances — Île-de-France
+          <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-gray-400 text-sm font-semibold px-5 py-2 rounded-full mb-8">
+            Partenaire agréé concessionnaires &amp; assurances
           </div>
 
           {/* ── 3 PORTES ── */}
@@ -50,17 +51,19 @@ export default function Home() {
             <a href="tel:0650500175"
               className="group relative bg-red-600 hover:bg-red-700 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-600/40 md:col-span-1 flex flex-col">
               <div className="flex items-start justify-between mb-6">
-                <div className="bg-white/20 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl">🚨</div>
+                <div className="bg-white/20 rounded-2xl w-14 h-14 flex items-center justify-center">
+                  <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                </div>
                 <div className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
                   EN DIRECT
                 </div>
               </div>
               <h2 className="text-2xl font-black text-white mb-2">Dépannage</h2>
               <p className="text-red-100 text-sm leading-relaxed mb-6 flex-1">
-                Panne, accident, batterie, crevaison. On intervient partout en IDF en moins de 45 min, jour et nuit. Tout type de véhicule.
+                Panne, accident, batterie, crevaison. Intervention partout en Île-de-France &amp; Oise en moins de 45 min, 24h/24.
               </p>
               <div className="bg-white text-red-600 font-black text-lg py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
-                📞 06 50 50 01 75
+                06 50 50 01 75
               </div>
             </a>
 
@@ -190,30 +193,12 @@ export default function Home() {
 
 
       {/* ── CONCESSIONNAIRES ── */}
-      <section className="py-14 px-4 bg-gray-950 text-white">
+      <section className="py-14 px-4 bg-gray-950">
         <div className="max-w-5xl mx-auto text-center">
-          <p className="text-gray-500 text-xs uppercase tracking-widest font-semibold mb-3">Ils nous font confiance</p>
-          <h2 className="text-2xl md:text-3xl font-black mb-2">Partenaire des grands concessionnaires</h2>
-          <p className="text-gray-400 text-sm mb-10 max-w-xl mx-auto">Renault, Peugeot, Toyota, Porsche et bien d&apos;autres nous confient régulièrement leurs véhicules clients pour intervention et transport.</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mb-6">
-            {[
-              { nom: 'RENAULT', couleur: 'text-yellow-400', bg: 'bg-yellow-400/10 border-yellow-400/20' },
-              { nom: 'PEUGEOT', couleur: 'text-blue-400', bg: 'bg-blue-400/10 border-blue-400/20' },
-              { nom: 'CITROËN', couleur: 'text-red-400', bg: 'bg-red-400/10 border-red-400/20' },
-              { nom: 'TOYOTA', couleur: 'text-red-500', bg: 'bg-red-500/10 border-red-500/20' },
-              { nom: 'VOLKSWAGEN', couleur: 'text-blue-300', bg: 'bg-blue-300/10 border-blue-300/20' },
-              { nom: 'PORSCHE', couleur: 'text-yellow-500', bg: 'bg-yellow-500/10 border-yellow-500/20' },
-              { nom: 'MERCEDES', couleur: 'text-gray-300', bg: 'bg-gray-300/10 border-gray-300/20' },
-              { nom: 'BMW', couleur: 'text-blue-400', bg: 'bg-blue-400/10 border-blue-400/20' },
-              { nom: 'FORD', couleur: 'text-blue-500', bg: 'bg-blue-500/10 border-blue-500/20' },
-              { nom: 'AUDI', couleur: 'text-gray-300', bg: 'bg-gray-300/10 border-gray-300/20' },
-            ].map((b) => (
-              <div key={b.nom} className={`border rounded-xl px-5 py-2.5 ${b.bg}`}>
-                <span className={`font-black text-sm tracking-wider ${b.couleur}`}>{b.nom}</span>
-              </div>
-            ))}
-          </div>
-          <p className="text-gray-600 text-xs">+ de nombreux autres partenaires en Île-de-France</p>
+          <p className="text-gray-600 text-xs uppercase tracking-widest font-semibold mb-3">Ils nous font confiance</p>
+          <h2 className="text-2xl md:text-3xl font-black text-white mb-2">Partenaire des grands concessionnaires</h2>
+          <p className="text-gray-500 text-sm mb-10 max-w-xl mx-auto">Renault, Peugeot, Toyota, Porsche et bien d&apos;autres nous confient régulièrement leurs véhicules clients pour intervention et transport.</p>
+          <BrandLogos theme="dark" />
         </div>
       </section>
 

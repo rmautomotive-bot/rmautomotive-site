@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Link from 'next/link'
 import Image from 'next/image'
+import NavExplorer from '@/components/NavExplorer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -70,7 +71,7 @@ const jsonLd = {
   sameAs: ['https://www.instagram.com/rmautomotive77/', 'https://www.tiktok.com/@rmautomotive77'],
 }
 
-const zones = ['Paris', 'Val-de-Marne', 'Seine-Saint-Denis', 'Hauts-de-Seine', 'Essonne', 'Yvelines', 'Val-d\'Oise', 'Seine-et-Marne']
+const zones = ['Paris', 'Val-de-Marne', 'Seine-Saint-Denis', 'Hauts-de-Seine', 'Essonne', 'Yvelines', 'Val-d\'Oise', 'Seine-et-Marne', 'Oise (60)']
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -82,10 +83,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         {/* Top bar urgence */}
         <div className="bg-gray-950 text-white text-xs py-2 px-4 text-center font-medium flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
-          <span>🚨 Dépannage 24h/24 — 7j/7 — <strong>Toute l&apos;Île-de-France</strong></span>
-          <span className="hidden sm:inline text-gray-600">|</span>
-          <span className="text-yellow-400 font-semibold">⭐ Partenaire agréé concessionnaires & assurances</span>
-          <span className="hidden sm:inline text-gray-600">|</span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse inline-block" />
+            Dépannage 24h/24 — 7j/7 — <strong>Île-de-France & Oise</strong>
+          </span>
+          <span className="hidden sm:inline text-gray-700">|</span>
+          <span className="text-gray-400">Partenaire agréé concessionnaires &amp; assurances</span>
+          <span className="hidden sm:inline text-gray-700">|</span>
           <a href="tel:0650500175" className="font-black text-red-400 underline underline-offset-2 text-sm">06 50 50 01 75</a>
         </div>
 
@@ -99,17 +103,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <div className="text-xs text-gray-500 leading-tight">Île-de-France · ⭐ 5/5 Google · 24h/24</div>
               </div>
             </Link>
-            <nav className="hidden md:flex items-center gap-4">
-              {[['/', 'Accueil'], ['/vente', '🚗 Vente'], ['/expertise', '🔍 Expertise'], ['/missions', '📸 Missions'], ['/zones', '📍 Zones'], ['/blog', '📝 Blog'], ['/depannage', '🚨 Dépannage'], ['/contact', 'Contact']].map(([href, label]) => (
-                <Link key={href} href={href} className={`text-sm font-medium transition-colors ${label.includes('🚨') ? 'text-red-600 font-bold hover:text-red-700' : 'text-gray-700 hover:text-red-600'}`}>
+            <nav className="hidden md:flex items-center gap-5">
+              {[['/', 'Accueil'], ['/vente', 'Vente'], ['/expertise', 'Expertise'], ['/depannage', 'Dépannage'], ['/contact', 'Contact']].map(([href, label]) => (
+                <Link key={href} href={href} className={`text-sm font-medium transition-colors ${label === 'Dépannage' ? 'text-red-600 font-bold hover:text-red-700' : 'text-gray-700 hover:text-red-600'}`}>
                   {label}
                 </Link>
               ))}
-              <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:shadow-lg hover:shadow-red-200 flex items-center gap-2">
-                📞 06 50 50 01 75
+              <NavExplorer />
+              <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white text-sm font-bold px-5 py-2.5 rounded-full transition-all hover:shadow-lg hover:shadow-red-200">
+                06 50 50 01 75
               </a>
             </nav>
-            <a href="tel:0650500175" className="md:hidden bg-red-600 text-white text-sm font-bold px-4 py-2 rounded-full animate-pulse-ring">
+            <a href="tel:0650500175" className="md:hidden bg-red-600 text-white text-sm font-bold px-4 py-2 rounded-full">
               Appeler
             </a>
           </div>
@@ -126,12 +131,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <span className="font-black text-white text-lg">RM Automotive</span>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                Dépannage, inspection, entretien et vente de véhicules en <strong className="text-white">Île-de-France</strong>. 
-                Intervention 24h/24 dans les 8 départements. ⭐ 5/5 — 42 avis Google.
+                Garage multi-services en <strong className="text-white">Île-de-France &amp; Oise</strong> — dépannage 24h/24, vente de véhicules, inspection et expertise. Partenaire agréé concessionnaires &amp; assurances. 5/5 · 42 avis Google.
               </p>
               <div className="flex gap-3 mb-6">
-                <a href="https://www.instagram.com/rmautomotive77/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-gradient-to-br hover:from-purple-500 hover:to-pink-500 text-white w-9 h-9 rounded-lg flex items-center justify-center transition-all text-sm">📸</a>
-                <a href="https://www.tiktok.com/@rmautomotive77" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-gray-700 text-white w-9 h-9 rounded-lg flex items-center justify-center transition-colors text-sm">🎵</a>
+                <a href="https://www.instagram.com/rmautomotive77/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-gray-700 text-white w-9 h-9 rounded-lg flex items-center justify-center transition-all text-sm font-bold">IG</a>
+                <a href="https://www.tiktok.com/@rmautomotive77" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-gray-700 text-white w-9 h-9 rounded-lg flex items-center justify-center transition-colors text-sm font-bold">TK</a>
               </div>
               <div className="text-xs text-gray-600">
                 <p className="font-semibold text-gray-500 mb-2">Zones couvertes :</p>
@@ -143,7 +147,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div>
               <h3 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">Navigation</h3>
               <ul className="space-y-2 text-sm">
-                {[['/', 'Accueil'], ['/vente', '🚗 Vente / Occasion'], ['/expertise', '🔍 Expertise'], ['/missions', '📸 Galerie Missions'], ['/blog', '📝 Blog Conseils'], ['/zones', 'Zones d\'intervention'], ['/depannage', '🚨 Dépannage 24h/24'], ['/contact', 'Contact']].map(([href, label]) => (
+                {[['/', 'Accueil'], ['/vente', 'Vente / Occasion'], ['/expertise', 'Expertise'], ['/missions', 'Galerie Missions'], ['/blog', 'Blog & Conseils'], ['/zones', 'Zones d\'intervention'], ['/depannage', 'Dépannage 24h/24'], ['/contact', 'Contact']].map(([href, label]) => (
                   <li key={href}><Link href={href} className="hover:text-red-400 transition-colors">{label}</Link></li>
                 ))}
               </ul>
@@ -151,10 +155,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div>
               <h3 className="font-bold text-white mb-4 text-sm uppercase tracking-wider">Contact</h3>
               <ul className="space-y-3 text-sm">
-                <li><a href="tel:0650500175" className="hover:text-red-400 transition-colors flex items-center gap-2"><span>📞</span><strong className="text-white">06 50 50 01 75</strong></a></li>
-                <li><a href="mailto:contact@rmautomotive.fr" className="hover:text-red-400 transition-colors flex items-center gap-2"><span>✉️</span> contact@rmautomotive.fr</a></li>
-                <li className="flex items-start gap-2"><span>📍</span><span>70 Av. Franklin Roosevelt<br />77290 Mitry-Mory</span></li>
-                <li className="text-red-400 font-semibold flex items-center gap-2"><span>🚨</span> Dépannage 24h/24 7j/7</li>
+                <li><a href="tel:0650500175" className="hover:text-red-400 transition-colors"><strong className="text-white">06 50 50 01 75</strong></a></li>
+                <li><a href="mailto:contact@rmautomotive.fr" className="hover:text-red-400 transition-colors">contact@rmautomotive.fr</a></li>
+                <li className="text-gray-500">70 Av. Franklin Roosevelt<br />77290 Mitry-Mory</li>
+                <li className="text-red-400 font-semibold">Dépannage 24h/24 — 7j/7</li>
               </ul>
             </div>
           </div>
@@ -180,7 +184,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         {/* Floating bar mobile */}
         <div className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-white border-t border-gray-200 p-3 flex gap-2 shadow-2xl">
           <a href="tel:0650500175" className="flex-1 bg-red-600 text-white font-bold py-3 rounded-xl text-center text-sm">
-            📞 06 50 50 01 75
+            06 50 50 01 75
           </a>
           <a
             href="https://wa.me/33650500175?text=Bonjour%20RM%20Automotive%2C%20j%27ai%20besoin%20d%27aide%20pour%20mon%20v%C3%A9hicule."
