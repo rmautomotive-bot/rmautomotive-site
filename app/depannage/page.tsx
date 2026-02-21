@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import QuoteForm from '@/components/QuoteForm'
 
 export const metadata: Metadata = {
   title: 'Dépannage Automobile 24h/24 | Partenaire Mondial Assistance — 0€ à avancer | Île-de-France',
@@ -380,6 +381,42 @@ export default function Depannage() {
                 <p className="text-gray-600 text-sm leading-relaxed pl-6">{f.a}</p>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DEVIS RAPIDE */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-red-100 text-red-600 text-xs font-bold px-3 py-1.5 rounded-full mb-5">
+                ⚡ Réponse immédiate
+              </div>
+              <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-5 leading-tight">
+                Demandez un devis<br />
+                <span className="text-red-600">en 2 minutes</span>
+              </h2>
+              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+                Remplissez le formulaire — on vous répond directement sur WhatsApp avec le délai d&apos;intervention et la prise en charge assurance.
+              </p>
+              <div className="space-y-4">
+                {[
+                  { icon: '⚡', t: 'Réponse en moins de 5 min', d: 'Même la nuit, même le week-end.' },
+                  { icon: '✅', t: '0€ à avancer si assuré', d: 'On gère avec votre assurance directement.' },
+                  { icon: '📍', t: 'Toute l\'Île-de-France', d: 'Paris, 77, 78, 91, 92, 93, 94, 95.' },
+                ].map(f => (
+                  <div key={f.t} className="flex items-start gap-3">
+                    <span className="text-xl flex-shrink-0">{f.icon}</span>
+                    <div>
+                      <p className="font-bold text-gray-900 text-sm">{f.t}</p>
+                      <p className="text-gray-500 text-xs">{f.d}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <QuoteForm />
           </div>
         </div>
       </section>

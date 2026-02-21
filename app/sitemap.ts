@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { zones } from '@/lib/zones'
+import { getArticles } from '@/lib/blog'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = 'https://rmautomotive.fr'
@@ -10,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/zones`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/vente`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${base}/expertise`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/missions`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.88 },
+    { url: `${base}/blog`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.85 },
     { url: `${base}/services`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/contact`, lastModified: new Date(), changeFrequency: 'yearly', priority: 0.7 },
   ]
@@ -21,5 +24,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.85,
   }))
 
-  return [...staticPages, ...zonePages]
+  const blogPages: MetadataRoute.Sitemap = getArticles().map(a => ({
+    url: `${base}/blog/${a.slug}`,
+    lastModified: new Date(a.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
+
+  return [...staticPages, ...zonePages, ...blogPages]
 }
