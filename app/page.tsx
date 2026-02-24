@@ -47,52 +47,73 @@ export default function Home() {
           {/* ── 3 PORTES ── */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
 
-            {/* DÉPANNAGE — la plus importante */}
+            {/* DÉPANNAGE */}
             <a href="tel:0650500175"
-              className="group relative bg-red-600 hover:bg-red-700 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-600/40 md:col-span-1 flex flex-col">
-              <div className="flex items-start justify-between mb-6">
-                <div className="bg-white/20 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl">🚨</div>
-                <div className="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse">
-                  EN DIRECT
+              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-600/40 md:col-span-1 flex flex-col min-h-72">
+              {/* Photo fond */}
+              <Image src="/premium/porsche-gt4rs.jpg" alt="Dépannage RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+              {/* Overlay rouge foncé */}
+              <div className="absolute inset-0 bg-gradient-to-t from-red-900/95 via-red-800/70 to-black/40" />
+              {/* Contenu */}
+              <div className="relative z-10 p-8 flex flex-col flex-1">
+                <div className="flex items-start justify-between mb-6">
+                  <div className="bg-white/15 backdrop-blur-sm rounded-2xl w-14 h-14 flex items-center justify-center text-3xl border border-white/20">🚨</div>
+                  <div className="bg-white/15 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse border border-white/20">
+                    EN DIRECT
+                  </div>
                 </div>
-              </div>
-              <h2 className="text-2xl font-black text-white mb-2">Dépannage</h2>
-              <p className="text-red-100 text-sm leading-relaxed mb-6 flex-1">
-                Panne, accident, batterie, crevaison. Intervention partout en Île-de-France &amp; Oise en moins de 45 min, 24h/24.
-              </p>
-              <div className="bg-white text-red-600 font-black text-lg py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
-                06 50 50 01 75
+                <h2 className="text-2xl font-black text-white mb-2">Dépannage</h2>
+                <p className="text-red-100/90 text-sm leading-relaxed mb-6 flex-1">
+                  Panne, accident, batterie, crevaison. Intervention partout en Île-de-France &amp; Oise en moins de 45 min, 24h/24.
+                </p>
+                <div className="bg-white text-red-600 font-black text-lg py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
+                  06 50 50 01 75
+                </div>
               </div>
             </a>
 
             {/* VENTE */}
             <Link href="/vente"
-              className="group relative bg-white/6 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col">
-              <div className="bg-white/10 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl mb-6">🚗</div>
-              <h2 className="text-2xl font-black text-white mb-2">Achat · Vente</h2>
-              <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-1">
-                Véhicules inspectés, révisés et garantis. Chercheur sur-mesure selon vos critères. Importation internationale.
-              </p>
-              <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
-                Voir nos réalisations <span className="text-red-500">→</span>
+              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-72">
+              {/* Photo fond showroom */}
+              <Image src="/voitures/car4.jpg" alt="Vente véhicules RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+              {/* Overlay sombre */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-900/75 to-gray-800/30" />
+              {/* Contenu */}
+              <div className="relative z-10 p-8 flex flex-col flex-1">
+                <div className="mb-6" />
+                <h2 className="text-2xl font-black text-white mb-2 mt-auto">Achat · Vente</h2>
+                <p className="text-gray-200 text-sm leading-relaxed mb-6 flex-1">
+                  Véhicules inspectés, révisés et garantis. Chercheur sur-mesure selon vos critères. Importation internationale.
+                </p>
+                <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
+                  Voir nos réalisations <span className="text-red-400">→</span>
+                </div>
               </div>
             </Link>
 
             {/* EXPERTISE */}
             <Link href="/expertise"
-              className="group relative bg-white/6 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-3xl p-8 text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col">
-              <div className="bg-white/10 rounded-2xl w-14 h-14 flex items-center justify-center text-3xl mb-4">🔍</div>
-              <h2 className="text-2xl font-black text-white mb-2">Expertise · Inspection</h2>
-              <p className="text-gray-400 text-sm leading-relaxed mb-4 flex-1">
-                Diagnostic complet, mesure peinture, check batterie EV, chiffrage dommages. Partenaire <strong className="text-white">Macadam Europe, Trustoo & Eurotol</strong>.
-              </p>
-              <div className="flex gap-2 flex-wrap mb-4">
-                {['Macadam Europe', 'Trustoo', 'Eurotol'].map(p => (
-                  <span key={p} className="bg-white/10 text-gray-300 text-xs px-2 py-0.5 rounded-full">{p}</span>
-                ))}
-              </div>
-              <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
-                +1 000 véhicules expertisés <span className="text-red-500">→</span>
+              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-72">
+              {/* Photo fond inspection */}
+              <Image src="/expertise-bg.jpg" alt="Expertise inspection RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+              {/* Overlay sombre */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-900/75 to-gray-800/30" />
+              {/* Contenu */}
+              <div className="relative z-10 p-8 flex flex-col flex-1">
+                <div className="mb-6" />
+                <h2 className="text-2xl font-black text-white mb-2 mt-auto">Expertise · Inspection</h2>
+                <p className="text-gray-200 text-sm leading-relaxed mb-4 flex-1">
+                  Diagnostic complet, mesure peinture, check batterie EV, chiffrage dommages. Partenaire <strong className="text-white">Macadam Europe, Trustoo &amp; Eurotol</strong>.
+                </p>
+                <div className="flex gap-2 flex-wrap mb-4">
+                  {['Macadam Europe', 'Trustoo', 'Eurotol'].map(p => (
+                    <span key={p} className="bg-white/15 backdrop-blur-sm text-gray-200 text-xs px-2 py-0.5 rounded-full border border-white/20">{p}</span>
+                  ))}
+                </div>
+                <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
+                  +1 000 véhicules expertisés <span className="text-red-400">→</span>
+                </div>
               </div>
             </Link>
 
