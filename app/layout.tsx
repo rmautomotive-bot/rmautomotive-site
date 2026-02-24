@@ -97,17 +97,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-3">
-              <Image src="/logo.jpg" alt="RM Automotive" width={44} height={44} className="rounded-lg object-contain bg-white" priority />
-              <div>
-                <div className="font-black text-gray-900 text-base leading-tight flex items-center gap-0.5">
-                  <span className="inline-flex items-center justify-center w-[18px] h-[18px] bg-red-600 rotate-6 rounded-[3px] mr-0.5 flex-shrink-0">
-                    <span className="-rotate-6 text-white font-black text-[11px] leading-none">R</span>
-                  </span>
-                  <span>M</span>
-                  <span className="ml-1 italic font-bold">Automotive</span>
-                </div>
-                <div className="text-xs text-gray-500 leading-tight">Île-de-France · ⭐ 5/5 Google · 24h/24</div>
-              </div>
+              <Image src="/logo.png" alt="RM Automotive" width={148} height={54} className="object-contain" priority />
+              <div className="text-xs text-gray-500 leading-tight hidden sm:block">Île-de-France · ⭐ 5/5 Google · 24h/24</div>
             </Link>
             <nav className="hidden md:flex items-center gap-5">
               {[['/', 'Accueil'], ['/vente', 'Vente'], ['/expertise', 'Expertise'], ['/depannage', '🚨 Dépannage'], ['/contact', 'Contact']].map(([href, label]) => (
@@ -132,15 +123,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <footer className="bg-gray-950 text-gray-400 mt-20">
           <div className="max-w-6xl mx-auto px-4 py-14 grid grid-cols-1 md:grid-cols-4 gap-10">
             <div className="md:col-span-2">
-              <div className="flex items-center gap-3 mb-4">
-                <Image src="/logo.jpg" alt="RM Automotive" width={44} height={44} className="rounded-lg object-contain bg-white" />
-                <span className="font-black text-white text-lg flex items-center gap-0.5">
-                  <span className="inline-flex items-center justify-center w-[20px] h-[20px] bg-red-600 rotate-6 rounded-[3px] mr-0.5 flex-shrink-0">
-                    <span className="-rotate-6 text-white font-black text-[12px] leading-none">R</span>
-                  </span>
-                  <span>M</span>
-                  <span className="ml-1 italic font-bold">Automotive</span>
-                </span>
+              <div className="flex items-center mb-4">
+                <div className="bg-white rounded-lg px-3 py-1.5 inline-flex">
+                  <Image src="/logo.png" alt="RM Automotive" width={140} height={52} className="object-contain" />
+                </div>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed mb-4">
                 Garage multi-services en <strong className="text-white">Île-de-France &amp; Oise</strong> — dépannage 24h/24, vente de véhicules, inspection et expertise. Partenaire agréé concessionnaires &amp; assurances. 5/5 · 42 avis Google.
