@@ -165,7 +165,7 @@ export default function Expertise() {
             <div className="flex items-center justify-center gap-3">
               <Image src="/logo.jpg" alt="RM Automotive" width={40} height={40} className="rounded-lg" />
               <div className="text-left">
-                <div className="font-black text-white">RM Automotive</div>
+                <div className="font-black"><span className="text-white">RM</span><span className="text-red-500 italic"> Automotive</span></div>
                 <div className="text-xs text-gray-400">Mitry-Mory, Île-de-France</div>
               </div>
             </div>

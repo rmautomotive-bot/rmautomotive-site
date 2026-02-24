@@ -78,8 +78,8 @@ export default async function ArticlePage({ params }: { params: Promise<{ slug: 
 
           {/* CTA fin d'article */}
           <div className="mt-14 bg-gray-950 rounded-3xl p-8 text-white text-center">
-            <h3 className="text-2xl font-black mb-2">RM Automotive — Disponible 24h/24</h3>
-            <p className="text-gray-400 mb-6">Partenaire Mondial Assistance · 0€ à avancer · Toute l&apos;Île-de-France</p>
+            <h3 className="text-2xl font-black mb-2"><span className="text-white">RM</span><span className="text-red-500 italic"> Automotive</span> — Disponible 24h/24</h3>
+            <p className="text-gray-400 mb-6">Partenaire Mondial Assistance · Agréé toutes assurances · Toute l&apos;Île-de-France & Oise</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-7 py-3.5 rounded-2xl transition-all flex items-center justify-center gap-2">
                 📞 06 50 50 01 75

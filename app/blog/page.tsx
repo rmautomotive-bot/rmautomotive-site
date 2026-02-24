@@ -31,7 +31,7 @@ export default function Blog() {
             📝 Conseils & Guides
           </div>
           <h1 className="text-4xl md:text-5xl font-black mb-4">
-            Blog <span className="text-red-500">RM Automotive</span>
+            Blog <span className="text-gray-900 dark:text-white">RM</span><span className="text-red-500 italic"> Automotive</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
             Guides pratiques, conseils en cas de panne, infos assurance et expertise automobile en Île-de-France.

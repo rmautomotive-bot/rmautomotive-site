@@ -84,16 +84,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* DISTRIBUTEUR LORRIES */}
-      <section className="py-14 px-4 bg-gray-900 text-white text-center">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-5xl mb-4">🏆</div>
-          <h2 className="text-2xl font-black mb-3">Distributeur Officiel Lorries</h2>
-          <p className="text-gray-400 text-lg">
-            RM Automotive est distributeur officiel <strong className="text-white">Lorries</strong> — votre garantie de véhicules de qualité et de services premium.
-          </p>
-        </div>
-      </section>
+      {/* PARTENAIRES */}
 
       {/* URGENCE */}
       <section className="py-14 px-4 bg-red-600 text-white text-center">
