@@ -99,7 +99,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="flex items-center gap-3">
               <Image src="/logo.jpg" alt="RM Automotive" width={44} height={44} className="rounded-lg object-contain bg-white" priority />
               <div>
-                <div className="font-black text-gray-900 text-base leading-tight">RM Automotive</div>
+                <div className="font-black text-gray-900 text-base leading-tight flex items-center gap-0.5">
+                  <span className="inline-flex items-center justify-center w-[18px] h-[18px] bg-red-600 rotate-6 rounded-[3px] mr-0.5 flex-shrink-0">
+                    <span className="-rotate-6 text-white font-black text-[11px] leading-none">R</span>
+                  </span>
+                  <span>M</span>
+                  <span className="ml-1 italic font-bold">Automotive</span>
+                </div>
                 <div className="text-xs text-gray-500 leading-tight">Île-de-France · ⭐ 5/5 Google · 24h/24</div>
               </div>
             </Link>
@@ -128,7 +134,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="md:col-span-2">
               <div className="flex items-center gap-3 mb-4">
                 <Image src="/logo.jpg" alt="RM Automotive" width={44} height={44} className="rounded-lg object-contain bg-white" />
-                <span className="font-black text-white text-lg">RM Automotive</span>
+                <span className="font-black text-white text-lg flex items-center gap-0.5">
+                  <span className="inline-flex items-center justify-center w-[20px] h-[20px] bg-red-600 rotate-6 rounded-[3px] mr-0.5 flex-shrink-0">
+                    <span className="-rotate-6 text-white font-black text-[12px] leading-none">R</span>
+                  </span>
+                  <span>M</span>
+                  <span className="ml-1 italic font-bold">Automotive</span>
+                </span>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed mb-4">
                 Garage multi-services en <strong className="text-white">Île-de-France &amp; Oise</strong> — dépannage 24h/24, vente de véhicules, inspection et expertise. Partenaire agréé concessionnaires &amp; assurances. 5/5 · 42 avis Google.
