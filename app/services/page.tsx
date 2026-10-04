@@ -93,7 +93,7 @@ export default function Services() {
           <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-8">Ils nous confient leurs véhicules</h2>
           <div className="flex flex-wrap items-center justify-center gap-6">
             {[
-              { nom: 'Autohero', img: '/partenaires/autohero.jpg', w: 140, h: 74 },
+              { nom: 'Autohero', img: '/partenaires/autohero.png', w: 72, h: 72 },
               { nom: 'Lizy', img: '/partenaires/lizy.png', w: 64, h: 64 },
               { nom: 'Macadam Europe', img: '/partenaires/macadam.jpg', w: 160, h: 82 },
               { nom: 'Trustoo', img: '/partenaires/trustoo.png', w: 56, h: 56 },

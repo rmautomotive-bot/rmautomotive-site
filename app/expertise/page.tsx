@@ -6,7 +6,7 @@ const partenairesLogos = [
   { nom: 'Macadam Europe', img: '/partenaires/macadam.jpg', bg: '#ffffff', width: 220, height: 113, border: true },
   { nom: 'Trustoo', img: '/partenaires/trustoo.png', bg: '#ffffff', width: 60, height: 60, border: true },
   { nom: 'Eurotol', img: '/partenaires/eurotol.svg', bg: '#003087', width: 160, height: 50, border: false },
-  { nom: 'Autohero', img: '/partenaires/autohero.jpg', bg: '#ffffff', width: 160, height: 84, border: true },
+  { nom: 'Autohero', img: '/partenaires/autohero.png', bg: '#ffffff', width: 100, height: 100, border: true },
   { nom: 'Lizy', img: '/partenaires/lizy.png', bg: '#ffffff', width: 70, height: 70, border: true },
 ]
 
