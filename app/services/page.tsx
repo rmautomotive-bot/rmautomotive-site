@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import InspectionForm from '@/components/InspectionForm'
 
 export const metadata: Metadata = {
   title: 'Services Auto — Inspection, Entretien, Vente | Mitry-Mory (77)',
@@ -84,7 +86,36 @@ export default function Services() {
         </div>
       </section>
 
-      {/* PARTENAIRES */}
+      {/* PARTENAIRES INSPECTION */}
+      <section className="py-16 px-4 bg-white border-t border-gray-100">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Partenaires inspection</div>
+          <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-8">Ils nous confient leurs véhicules</h2>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            {[
+              { nom: 'Autohero', img: '/partenaires/autohero.jpg', w: 140, h: 74 },
+              { nom: 'Lizy', img: '/partenaires/lizy.png', w: 64, h: 64 },
+              { nom: 'Macadam Europe', img: '/partenaires/macadam.jpg', w: 160, h: 82 },
+              { nom: 'Trustoo', img: '/partenaires/trustoo.png', w: 56, h: 56 },
+            ].map(p => (
+              <div key={p.nom} title={p.nom} className="flex items-center justify-center bg-gray-50 rounded-2xl px-6 py-4 border border-gray-100 shadow-sm">
+                <Image src={p.img} alt={p.nom} width={p.w} height={p.h} className="object-contain" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* DEMANDE DE TARIF INSPECTION */}
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-3">Un véhicule à inspecter avant achat ?</h2>
+            <p className="text-gray-500">Envoyez-nous le lien de l&apos;annonce, on vous donne un tarif rapidement.</p>
+          </div>
+          <InspectionForm />
+        </div>
+      </section>
 
       {/* URGENCE */}
       <section className="py-14 px-4 bg-red-600 text-white text-center">

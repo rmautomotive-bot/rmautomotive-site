@@ -103,6 +103,15 @@ export default function Depannage() {
         </div>
       </section>
 
+      {/* ILS NOUS APPELLENT — GRANDS GROUPES */}
+      <section className="py-14 px-4 bg-white border-b border-gray-100">
+        <div className="max-w-5xl mx-auto text-center">
+          <div className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Ils nous font confiance</div>
+          <h2 className="text-2xl md:text-3xl font-black text-gray-900 mb-8">Nos partenaires nous appellent directement</h2>
+          <BrandLogos theme="light" showReseaux />
+        </div>
+      </section>
+
       {/* PANNES */}
       <section className="py-20 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">

@@ -15,11 +15,17 @@ const brands = [
   { nom: 'Opel', file: 'opel' },
 ]
 
+const reseaux = [
+  { nom: 'Speedy', file: 'speedy', ext: 'png' },
+  { nom: 'Autobacs', file: 'autobacs', ext: 'png' },
+]
+
 interface Props {
   theme?: 'light' | 'dark'
+  showReseaux?: boolean
 }
 
-export default function BrandLogos({ theme = 'dark' }: Props) {
+export default function BrandLogos({ theme = 'dark', showReseaux = false }: Props) {
   const isDark = theme === 'dark'
 
   return (
@@ -37,6 +43,21 @@ export default function BrandLogos({ theme = 'dark' }: Props) {
               width={56}
               height={32}
               className="object-contain max-h-8 w-auto"
+            />
+          </div>
+        ))}
+        {showReseaux && reseaux.map((b) => (
+          <div
+            key={b.nom}
+            title={b.nom}
+            className="flex items-center justify-center bg-white rounded-lg px-3 py-2 opacity-80 hover:opacity-100 transition-opacity duration-200 shadow-sm"
+          >
+            <Image
+              src={`/partenaires/${b.file}.${b.ext}`}
+              alt={b.nom}
+              width={80}
+              height={32}
+              className="object-contain max-h-7 w-auto"
             />
           </div>
         ))}
