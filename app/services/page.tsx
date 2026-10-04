@@ -94,7 +94,7 @@ export default function Services() {
           <div className="flex flex-wrap items-center justify-center gap-6">
             {[
               { nom: 'Autohero', img: '/partenaires/autohero.png', w: 72, h: 72 },
-              { nom: 'Lizy', img: '/partenaires/lizy.png', w: 64, h: 64 },
+              { nom: 'Europcar', img: '/partenaires/europcar.png', w: 120, h: 32 },
               { nom: 'Macadam Europe', img: '/partenaires/macadam.jpg', w: 160, h: 82 },
               { nom: 'Trustoo', img: '/partenaires/trustoo.png', w: 56, h: 56 },
             ].map(p => (
