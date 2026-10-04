@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import InspectionBooking from '@/components/InspectionBooking'
-import InspectionDetails from '@/components/InspectionDetails'
 import CountUp from '@/components/CountUp'
 
 const partenairesLogos = [
@@ -153,8 +152,6 @@ export default function Expertise() {
               Une inspection peut vous permettre de négocier le prix du véhicule. Les défauts et frais identifiés constituent des arguments concrets pour votre négociation et peuvent, dans de nombreux cas, permettre de compenser tout ou partie du coût de l&apos;inspection.
             </p>
           </div>
-
-          <InspectionDetails />
         </div>
       </section>
 
