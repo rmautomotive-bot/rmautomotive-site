@@ -112,7 +112,7 @@ export default function Home() {
                   ))}
                 </div>
                 <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
-                  +1 000 véhicules expertisés <span className="text-red-400">→</span>
+                  +4 400 véhicules expertisés <span className="text-red-400">→</span>
                 </div>
               </div>
             </Link>
@@ -290,7 +290,7 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {[
               { icon: '🔍', t: 'Inspection avant achat', d: 'Rapport complet avant d\'acheter un véhicule d\'occasion. Zéro mauvaise surprise.', href: '/expertise' },
-              { icon: '⚙️', t: 'Diagnostic & Expertise', d: 'Partenaire Macadam Europe, Trustoo, Eurotol. +1 000 véhicules expertisés.', href: '/expertise' },
+              { icon: '⚙️', t: 'Diagnostic & Expertise', d: 'Partenaire Macadam Europe, Trustoo, Eurotol, Autohero, Europcar. +4 400 véhicules expertisés.', href: '/expertise' },
               { icon: '🔧', t: 'Entretien & Réparation', d: 'Vidange, freins, distribution, clim. Toutes marques, prix transparents.', href: '/services' },
               { icon: '🛞', t: 'Pneumatiques', d: 'Fourniture, montage, équilibrage. Toutes marques disponibles.', href: '/services' },
             ].map(s => (

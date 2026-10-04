@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import InspectionBooking from '@/components/InspectionBooking'
+import CountUp from '@/components/CountUp'
 
 const partenairesLogos = [
   { nom: 'Macadam Europe', img: '/partenaires/macadam.jpg', bg: '#ffffff', width: 220, height: 113, border: true },
@@ -13,10 +14,10 @@ const partenairesLogos = [
 
 export const metadata: Metadata = {
   title: 'Expertise Automobile | Inspection Véhicule | Macadam Europe · Trustoo · Eurotol — RM Automotive',
-  description: 'RM Automotive — Expert automobile certifié, partenaire Macadam Europe, Trustoo & Eurotol. +1000 véhicules expertisés. Inspection complète, peinture, carrosserie, batterie, calculateur. ☎ 06 50 50 01 75.',
+  description: 'RM Automotive — Expert automobile certifié, partenaire Macadam Europe, Trustoo & Eurotol. +4400 véhicules expertisés. Inspection complète, peinture, carrosserie, batterie, calculateur. ☎ 06 50 50 01 75.',
   openGraph: {
     title: 'Expertise Automobile — Partenaire Macadam Europe · Trustoo · Eurotol | RM Automotive',
-    description: 'Expert automobile certifié. +1000 véhicules expertisés. Partenaire des plus grands groupes automobiles.',
+    description: 'Expert automobile certifié. +4400 véhicules expertisés. Partenaire des plus grands groupes automobiles.',
     url: 'https://rmautomotive.fr/expertise',
   },
 }
@@ -25,10 +26,15 @@ const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'AutoRepair',
   name: 'RM Automotive — Expertise Automobile',
-  description: 'Expert automobile certifié partenaire de Macadam Europe, Trustoo et Eurotol. +1000 véhicules expertisés.',
+  description: 'Expert automobile certifié partenaire de Macadam Europe, Trustoo et Eurotol. +4400 véhicules expertisés.',
   telephone: '+33650500175',
   address: { '@type': 'PostalAddress', streetAddress: '70 Avenue Franklin Roosevelt', addressLocality: 'Mitry-Mory', postalCode: '77290', addressCountry: 'FR' },
   aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '55' },
+}
+
+const statsNombres = {
+  vehicules: 4400,
+  groupes: 5,
 }
 
 const checkPoints = [
@@ -47,8 +53,8 @@ const partenaires = [
     nom: 'Macadam Europe',
     logoImg: '/partenaires/macadam.jpg',
     logoBg: '#ffffff',
-    desc: 'Collaboration étroite avec l\'un des leaders européens du reconditionnement automobile. Plus de 1 000 véhicules expertisés ensemble à ce jour.',
-    stat: '+1 000 véhicules',
+    desc: 'Collaboration étroite avec l\'un des leaders européens du reconditionnement automobile. Plus de 4 400 véhicules expertisés ensemble à ce jour.',
+    stat: '+4 400 véhicules',
     statLabel: 'expertisés',
     color: 'blue',
   },
@@ -82,15 +88,15 @@ export default function Expertise() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(220,38,38,0.1),_transparent_60%)]" />
         <div className="relative max-w-5xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-gray-300 text-xs font-bold px-4 py-1.5 rounded-full mb-6">
-            🤝 Macadam Europe · Trustoo · Eurotol · Particuliers
+            🤝 Macadam Europe · Trustoo · Eurotol · Autohero · Europcar
           </div>
           <h1 className="text-4xl md:text-6xl font-black mb-6 leading-tight">
             Expertise automobile<br />
             <span className="text-red-500">Professionnelle & Certifiée</span>
           </h1>
           <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Grands groupes, plateformes de confiance, particuliers — ils nous font tous confiance pour expertiser leurs véhicules.
-            <strong className="text-white"> Plus de 1 000 véhicules expertisés à ce jour.</strong>
+            5 grands groupes, plateformes de confiance, particuliers — ils nous font tous confiance pour expertiser leurs véhicules.
+            <strong className="text-white"> Plus de 4 400 véhicules expertisés à ce jour.</strong>
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-8 py-4 rounded-2xl text-lg transition-all hover:shadow-2xl hover:shadow-red-600/30 flex items-center gap-2 justify-center">
@@ -103,20 +109,26 @@ export default function Expertise() {
         </div>
       </section>
 
-      {/* STAT CENTRALE */}
-      <section className="bg-white py-10 border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { n: '+1 000', l: 'Véhicules expertisés' },
-            { n: '3', l: 'Grands groupes partenaires' },
-            { n: '⭐ 5/5', l: '55 avis Google' },
-            { n: '100%', l: 'Rapport détaillé fourni' },
-          ].map(s => (
-            <div key={s.l}>
-              <div className="text-3xl font-black text-red-600">{s.n}</div>
-              <div className="text-xs text-gray-500 mt-1">{s.l}</div>
-            </div>
-          ))}
+      {/* STAT CENTRALE — DÉCOMPTE IMPRESSIONNANT */}
+      <section className="bg-gray-950 py-14 border-b border-gray-900 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(220,38,38,0.15),_transparent_70%)]" />
+        <div className="relative max-w-4xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <CountUp end={statsNombres.vehicules} prefix="+" className="text-4xl md:text-5xl font-black text-red-500" />
+            <div className="text-xs text-gray-400 mt-2 uppercase tracking-wide">Véhicules expertisés à ce jour</div>
+          </div>
+          <div>
+            <CountUp end={statsNombres.groupes} className="text-4xl md:text-5xl font-black text-red-500" />
+            <div className="text-xs text-gray-400 mt-2 uppercase tracking-wide">Grands groupes partenaires</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-red-500">5/5</div>
+            <div className="text-xs text-gray-400 mt-2 uppercase tracking-wide">⭐ 55 avis Google</div>
+          </div>
+          <div>
+            <div className="text-4xl md:text-5xl font-black text-red-500">100%</div>
+            <div className="text-xs text-gray-400 mt-2 uppercase tracking-wide">Rapport détaillé fourni</div>
+          </div>
         </div>
       </section>
 
