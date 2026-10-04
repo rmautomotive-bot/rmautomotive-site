@@ -285,7 +285,7 @@ Si votre assurance ne couvre pas (rare mais possible), exigez un devis avant tou
 
 ### Pourquoi choisir RM Automotive ?
 
-- ⭐ **5/5 sur Google** — 42 avis vérifiés
+- ⭐ **5/5 sur Google** — 55 avis vérifiés
 - ✅ **Partenaire Mondial Assistance et 10+ assureurs**
 - 🚐 **Équipé pour tous types** de véhicules (citadine, utilitaire, prestige, électrique)
 - 📍 **8 départements** d'Île-de-France couverts

@@ -36,7 +36,7 @@ export default async function ZonePage({ params }: { params: Promise<{ slug: str
     telephone: '+33650500175',
     areaServed: { '@type': 'AdministrativeArea', name: `${zone.nom} (${zone.code})` },
     address: { '@type': 'PostalAddress', streetAddress: '70 Avenue Franklin Roosevelt', addressLocality: 'Mitry-Mory', postalCode: '77290', addressCountry: 'FR' },
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '42' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '55' },
   }
 
   return (

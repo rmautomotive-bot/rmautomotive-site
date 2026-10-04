@@ -129,7 +129,7 @@ export default function Home() {
       <section className="bg-gray-50 py-10 px-4">
         <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8 md:gap-12 text-center">
           {[
-            { v: '⭐ 5/5', l: '42 avis Google' },
+            { v: '⭐ 5/5', l: '55 avis Google' },
             { v: '< 45 min', l: 'Délai intervention' },
             { v: '8 dép.', l: 'Île-de-France couverte' },
             { v: '24h/7j', l: 'Dépannage nonstop' },

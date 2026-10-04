@@ -27,7 +27,7 @@ const jsonLd = {
   description: 'Expert automobile certifié partenaire de Macadam Europe, Trustoo et Eurotol. +1000 véhicules expertisés.',
   telephone: '+33650500175',
   address: { '@type': 'PostalAddress', streetAddress: '70 Avenue Franklin Roosevelt', addressLocality: 'Mitry-Mory', postalCode: '77290', addressCountry: 'FR' },
-  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '42' },
+  aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '55' },
 }
 
 const checkPoints = [
@@ -44,7 +44,8 @@ const checkPoints = [
 const partenaires = [
   {
     nom: 'Macadam Europe',
-    logo: '🏢',
+    logoImg: '/partenaires/macadam.jpg',
+    logoBg: '#ffffff',
     desc: 'Collaboration étroite avec l\'un des leaders européens du reconditionnement automobile. Plus de 1 000 véhicules expertisés ensemble à ce jour.',
     stat: '+1 000 véhicules',
     statLabel: 'expertisés',
@@ -52,7 +53,8 @@ const partenaires = [
   },
   {
     nom: 'Trustoo',
-    logo: '✅',
+    logoImg: '/partenaires/trustoo.png',
+    logoBg: '#ffffff',
     desc: 'Partenaire certifié Trustoo, plateforme de confiance pour l\'achat/vente de véhicules d\'occasion entre particuliers et professionnels.',
     stat: 'Certifié',
     statLabel: 'partenaire officiel',
@@ -60,7 +62,8 @@ const partenaires = [
   },
   {
     nom: 'Eurotol',
-    logo: '🌧️',
+    logoImg: '/partenaires/eurotol.svg',
+    logoBg: '#003087',
     desc: 'Référencé pour les grandes vagues de grêle en France. Expert reconnu pour le chiffrage et l\'évaluation des dommages grêle à grande échelle.',
     stat: 'Expert',
     statLabel: 'dommages grêle',
@@ -105,7 +108,7 @@ export default function Expertise() {
           {[
             { n: '+1 000', l: 'Véhicules expertisés' },
             { n: '3', l: 'Grands groupes partenaires' },
-            { n: '⭐ 5/5', l: '42 avis Google' },
+            { n: '⭐ 5/5', l: '55 avis Google' },
             { n: '100%', l: 'Rapport détaillé fourni' },
           ].map(s => (
             <div key={s.l}>
@@ -146,7 +149,9 @@ export default function Expertise() {
               <div key={p.nom} className="bg-white rounded-3xl p-8 border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
-                  <div className="text-5xl">{p.logo}</div>
+                  <div className="h-14 w-28 rounded-xl flex items-center justify-center px-3 border border-gray-100" style={{ backgroundColor: p.logoBg }}>
+                    <Image src={p.logoImg} alt={p.nom} width={100} height={48} className="object-contain max-h-10 w-auto" />
+                  </div>
                   <div className="text-right">
                     <div className="text-2xl font-black text-gray-900">{p.stat}</div>
                     <div className="text-xs text-gray-400">{p.statLabel}</div>

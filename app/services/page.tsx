@@ -56,7 +56,7 @@ export default function Services() {
           <div className="flex items-center justify-center gap-3 mt-6 text-yellow-400">
             {'⭐'.repeat(5)}
             <span className="text-white font-bold">5/5</span>
-            <span className="text-gray-400 text-sm">· 42 avis Google</span>
+            <span className="text-gray-400 text-sm">· 55 avis Google</span>
           </div>
         </div>
       </section>
