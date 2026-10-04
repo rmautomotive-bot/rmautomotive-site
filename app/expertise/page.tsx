@@ -145,6 +145,13 @@ export default function Expertise() {
             </p>
           </div>
           <InspectionBooking />
+
+          <div className="max-w-3xl mx-auto mt-10 bg-amber-50 border border-amber-200 rounded-2xl p-6 flex items-start gap-3">
+            <div className="text-2xl">💰</div>
+            <p className="text-sm text-amber-900 leading-relaxed">
+              Une inspection peut vous permettre de négocier le prix du véhicule. Les défauts et frais identifiés constituent des arguments concrets pour votre négociation et peuvent, dans de nombreux cas, permettre de compenser tout ou partie du coût de l&apos;inspection.
+            </p>
+          </div>
         </div>
       </section>
 
