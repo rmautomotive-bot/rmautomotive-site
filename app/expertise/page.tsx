@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
+import InspectionBooking from '@/components/InspectionBooking'
 
 const partenairesLogos = [
   { nom: 'Macadam Europe', img: '/partenaires/macadam.jpg', bg: '#ffffff', width: 220, height: 113, border: true },
@@ -116,6 +117,22 @@ export default function Expertise() {
               <div className="text-xs text-gray-500 mt-1">{s.l}</div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* INSPECTION AVANT ACHAT — OFFRE PRINCIPALE */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-14">
+            <div className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Réservation en ligne</div>
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+              🚗 Vous avez trouvé votre future voiture ?
+            </h2>
+            <p className="text-gray-500 max-w-xl mx-auto">
+              Avant de l&apos;acheter, faites-la contrôler par un professionnel. Envoyez-nous les informations du véhicule.
+            </p>
+          </div>
+          <InspectionBooking />
         </div>
       </section>
 
