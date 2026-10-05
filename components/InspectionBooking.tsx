@@ -131,10 +131,40 @@ export default function InspectionBooking() {
   })
   const [marqueMode, setMarqueMode] = useState<'select' | 'custom'>('select')
   const [modeleMode, setModeleMode] = useState<'select' | 'custom'>('select')
+  const [adresseSuggestions, setAdresseSuggestions] = useState<string[]>([])
+  const [showSuggestions, setShowSuggestions] = useState(false)
+  const adresseTimeout = useRef<ReturnType<typeof setTimeout> | null>(null)
   const formRef = useRef<HTMLDivElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  }
+
+  const handleVilleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const val = e.target.value
+    setForm(prev => ({ ...prev, ville: val }))
+    if (adresseTimeout.current) clearTimeout(adresseTimeout.current)
+    if (val.trim().length < 3) {
+      setAdresseSuggestions([])
+      return
+    }
+    adresseTimeout.current = setTimeout(async () => {
+      try {
+        const res = await fetch(`https://api-adresse.data.gouv.fr/search/?q=${encodeURIComponent(val)}&limit=5`)
+        const data = await res.json()
+        const labels = (data?.features || []).map((f: { properties?: { label?: string } }) => f.properties?.label).filter(Boolean) as string[]
+        setAdresseSuggestions(labels)
+        setShowSuggestions(true)
+      } catch {
+        setAdresseSuggestions([])
+      }
+    }, 300)
+  }
+
+  const selectAdresse = (label: string) => {
+    setForm(prev => ({ ...prev, ville: label }))
+    setAdresseSuggestions([])
+    setShowSuggestions(false)
   }
 
   const handleMarqueSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -343,10 +373,25 @@ export default function InspectionBooking() {
         {/* LOCALISATION / RDV */}
         <fieldset className="space-y-4">
           <legend className="text-xs font-black text-gray-500 uppercase tracking-widest mb-3 block">📍 Localisation et rendez-vous</legend>
-          <div>
-            <label className="block text-xs font-semibold text-gray-600 mb-1.5">Ville où se trouve le véhicule *</label>
-            <input name="ville" value={form.ville} onChange={handleChange} required placeholder="Ex: Mitry-Mory, Paris, Meaux..."
+          <div className="relative">
+            <label className="block text-xs font-semibold text-gray-600 mb-1.5">Adresse ou ville où se trouve le véhicule *</label>
+            <input name="ville" value={form.ville} onChange={handleVilleChange}
+              onFocus={() => adresseSuggestions.length > 0 && setShowSuggestions(true)}
+              onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
+              required autoComplete="off" placeholder="Ex: 12 rue de la Paix, Mitry-Mory..."
               className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100" />
+            {showSuggestions && adresseSuggestions.length > 0 && (
+              <ul className="absolute z-20 left-0 right-0 mt-1 bg-white border border-gray-200 rounded-xl shadow-lg max-h-56 overflow-auto">
+                {adresseSuggestions.map(label => (
+                  <li key={label}>
+                    <button type="button" onMouseDown={() => selectAdresse(label)}
+                      className="w-full text-left px-4 py-2.5 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">
+                      📍 {label}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
