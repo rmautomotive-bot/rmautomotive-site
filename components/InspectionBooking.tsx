@@ -79,6 +79,48 @@ const colorMap: Record<string, { border: string; bg: string; text: string; btn: 
   red: { border: 'border-red-500', bg: 'bg-red-50', text: 'text-red-600', btn: 'bg-red-600 hover:bg-red-700' },
 }
 
+const MODELS_BY_BRAND: Record<string, string[]> = {
+  Peugeot: ['106', '107', '108', '206', '207', '208', '2008', '301', '306', '307', '308', '3008', '406', '407', '408', '5008', '508', 'Partner', 'Rifter', 'Traveller'],
+  Renault: ['Clio', 'Captur', 'Megane', 'Scenic', 'Talisman', 'Kadjar', 'Koleos', 'Twingo', 'Zoe', 'Espace', 'Laguna', 'Kangoo', 'Austral', 'Arkana'],
+  'Citroën': ['C1', 'C2', 'C3', 'C3 Aircross', 'C4', 'C4 Picasso', 'C4 Cactus', 'C5', 'C5 Aircross', 'C5 X', 'Berlingo', 'DS3', 'Xsara'],
+  Volkswagen: ['Polo', 'Golf', 'Passat', 'Tiguan', 'T-Roc', 'T-Cross', 'Touran', 'Touareg', 'Arteon', 'Up!', 'Caddy', 'Scirocco', 'Beetle'],
+  Audi: ['A1', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'Q2', 'Q3', 'Q5', 'Q7', 'Q8', 'TT', 'e-tron'],
+  BMW: ['Série 1', 'Série 2', 'Série 3', 'Série 4', 'Série 5', 'Série 7', 'X1', 'X2', 'X3', 'X4', 'X5', 'X6', 'Z4', 'i3', 'i4'],
+  'Mercedes-Benz': ['Classe A', 'Classe B', 'Classe C', 'Classe E', 'Classe S', 'CLA', 'CLS', 'GLA', 'GLB', 'GLC', 'GLE', 'GLS', 'Vito', 'Sprinter'],
+  Opel: ['Corsa', 'Astra', 'Insignia', 'Mokka', 'Crossland', 'Grandland', 'Zafira', 'Combo', 'Vivaro'],
+  Ford: ['Fiesta', 'Focus', 'Puma', 'Kuga', 'Mondeo', 'EcoSport', 'Ka', 'Galaxy', 'S-Max', 'Transit', 'Mustang'],
+  Toyota: ['Yaris', 'Corolla', 'C-HR', 'RAV4', 'Aygo', 'Auris', 'Prius', 'Proace', 'Camry', 'Land Cruiser'],
+  Nissan: ['Micra', 'Juke', 'Qashqai', 'X-Trail', 'Leaf', 'Note', '370Z', 'Navara'],
+  Fiat: ['500', 'Panda', 'Tipo', '500X', '500L', 'Punto', 'Doblo', 'Ducato'],
+  Dacia: ['Sandero', 'Duster', 'Logan', 'Spring', 'Jogger', 'Lodgy'],
+  Seat: ['Ibiza', 'Leon', 'Arona', 'Ateca', 'Tarraco', 'Alhambra'],
+  'Škoda': ['Fabia', 'Octavia', 'Superb', 'Kamiq', 'Karoq', 'Kodiaq', 'Scala'],
+  Hyundai: ['i10', 'i20', 'i30', 'Tucson', 'Kona', 'Santa Fe', 'Ioniq'],
+  Kia: ['Picanto', 'Rio', 'Ceed', 'Niro', 'Sportage', 'Sorento', 'Stonic', 'EV6'],
+  Mini: ['Cooper', 'Countryman', 'Clubman', 'Cabrio'],
+  Volvo: ['V40', 'V60', 'V90', 'XC40', 'XC60', 'XC90', 'S60', 'S90'],
+  Mazda: ['2', '3', '6', 'CX-3', 'CX-5', 'CX-30', 'MX-5'],
+  Honda: ['Civic', 'Jazz', 'CR-V', 'HR-V', 'Accord'],
+  Suzuki: ['Swift', 'Vitara', 'S-Cross', 'Ignis', 'Jimny'],
+  Jeep: ['Renegade', 'Compass', 'Cherokee', 'Grand Cherokee', 'Wrangler'],
+  'Land Rover': ['Range Rover', 'Range Rover Sport', 'Range Rover Evoque', 'Discovery', 'Defender'],
+  Porsche: ['911', 'Cayenne', 'Macan', 'Panamera', 'Taycan', 'Boxster', 'Cayman'],
+  'Alfa Romeo': ['Giulietta', 'Giulia', 'Stelvio', 'Mito', '4C'],
+  Jaguar: ['XE', 'XF', 'F-Pace', 'E-Pace', 'F-Type'],
+  Lexus: ['CT', 'IS', 'ES', 'RX', 'NX', 'UX'],
+  Mitsubishi: ['Space Star', 'ASX', 'Outlander', 'Eclipse Cross', 'L200'],
+  Smart: ['Fortwo', 'Forfour'],
+  DS: ['DS 3', 'DS 4', 'DS 7', 'DS 9'],
+  Tesla: ['Model 3', 'Model S', 'Model X', 'Model Y'],
+  Alpine: ['A110'],
+}
+
+const BRANDS = Object.keys(MODELS_BY_BRAND).sort((a, b) => a.localeCompare(b, 'fr'))
+
+const CURRENT_YEAR = new Date().getFullYear()
+const YEARS: string[] = []
+for (let y = CURRENT_YEAR; y >= 1990; y--) YEARS.push(String(y))
+
 export default function InspectionBooking() {
   const [form, setForm] = useState({
     marque: '', modele: '', annee: '', motorisation: '', kilometrage: '', prix_vente: '', lien_annonce: '',
@@ -87,11 +129,38 @@ export default function InspectionBooking() {
     nom: '', telephone: '', email: '',
     message: '',
   })
+  const [marqueMode, setMarqueMode] = useState<'select' | 'custom'>('select')
+  const [modeleMode, setModeleMode] = useState<'select' | 'custom'>('select')
   const formRef = useRef<HTMLDivElement>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
+
+  const handleMarqueSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const val = e.target.value
+    if (val === '__autre__') {
+      setMarqueMode('custom')
+      setModeleMode('custom')
+      setForm(prev => ({ ...prev, marque: '', modele: '' }))
+    } else {
+      setMarqueMode('select')
+      setModeleMode('select')
+      setForm(prev => ({ ...prev, marque: val, modele: '' }))
+    }
+  }
+
+  const handleModeleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const val = e.target.value
+    if (val === '__autre__') {
+      setModeleMode('custom')
+      setForm(prev => ({ ...prev, modele: '' }))
+    } else {
+      setForm(prev => ({ ...prev, modele: val }))
+    }
+  }
+
+  const modelsForBrand = MODELS_BY_BRAND[form.marque] || []
 
   const selectTier = (id: string) => {
     setForm(prev => ({ ...prev, formule: id }))
@@ -200,20 +269,45 @@ export default function InspectionBooking() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-semibold text-gray-600 mb-1.5">Marque *</label>
-              <input name="marque" value={form.marque} onChange={handleChange} required placeholder="Ex: Peugeot"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100" />
+              {marqueMode === 'select' ? (
+                <select value={form.marque} onChange={handleMarqueSelect} required
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100">
+                  <option value="">-- Sélectionner --</option>
+                  {BRANDS.map(b => <option key={b} value={b}>{b}</option>)}
+                  <option value="__autre__">Autre marque…</option>
+                </select>
+              ) : (
+                <div className="flex gap-2">
+                  <input name="marque" value={form.marque} onChange={handleChange} required placeholder="Ex: Peugeot" autoFocus
+                    className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100" />
+                  <button type="button" onClick={() => { setMarqueMode('select'); setModeleMode('select'); setForm(prev => ({ ...prev, marque: '', modele: '' })) }}
+                    className="text-xs font-semibold text-gray-500 hover:text-red-600 whitespace-nowrap px-2">↩ liste</button>
+                </div>
+              )}
             </div>
             <div>
               <label className="block text-xs font-semibold text-gray-600 mb-1.5">Modèle *</label>
-              <input name="modele" value={form.modele} onChange={handleChange} required placeholder="Ex: 3008"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100" />
+              {modeleMode === 'select' && modelsForBrand.length > 0 ? (
+                <select value={form.modele} onChange={handleModeleSelect} required
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100">
+                  <option value="">-- Sélectionner --</option>
+                  {modelsForBrand.map(m => <option key={m} value={m}>{m}</option>)}
+                  <option value="__autre__">Autre modèle…</option>
+                </select>
+              ) : (
+                <input name="modele" value={form.modele} onChange={handleChange} required placeholder="Ex: 3008"
+                  className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100" />
+              )}
             </div>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label className="block text-xs font-semibold text-gray-600 mb-1.5">Année</label>
-              <input name="annee" value={form.annee} onChange={handleChange} placeholder="Ex: 2019"
-                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100" />
+              <select name="annee" value={form.annee} onChange={handleChange}
+                className="w-full border border-gray-200 rounded-xl px-4 py-3 text-sm bg-gray-50 focus:outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100">
+                <option value="">-- Sélectionner --</option>
+                {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
+              </select>
             </div>
             <div>
               <label className="block text-xs font-semibold text-gray-600 mb-1.5">Motorisation</label>
