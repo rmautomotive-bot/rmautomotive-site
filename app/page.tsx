@@ -37,82 +37,88 @@ export default function Home() {
           </h1>
 
           <p className="text-lg md:text-xl text-gray-400 mb-5 max-w-xl mx-auto leading-relaxed">
-            Votre garage expert en Île-de-France &amp; Oise.<br/>
-            Dépannage 24h/24, vente, expertise &amp; entretien — tout type de véhicule.
+            Dépannage, expertise et solutions automobiles en Île-de-France.
           </p>
           <div className="inline-flex items-center gap-2 bg-white/8 border border-white/15 text-gray-400 text-sm font-semibold px-5 py-2 rounded-full mb-8">
             Partenaire agréé concessionnaires &amp; assurances
           </div>
 
-          {/* ── 3 PORTES ── */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
+          {/* ── 4 PILIERS ── */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 max-w-6xl mx-auto">
 
             {/* DÉPANNAGE */}
             <a href="tel:0650500175"
-              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-600/40 md:col-span-1 flex flex-col min-h-72">
+              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-red-600/40 flex flex-col min-h-80">
               {/* Photo fond */}
-              <Image src="/premium/porsche-gt4rs.jpg" alt="Dépannage RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+              <Image src="/premium/porsche-gt4rs.jpg" alt="Dépannage RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 25vw" />
               {/* Overlay rouge foncé */}
               <div className="absolute inset-0 bg-gradient-to-t from-red-900/95 via-red-800/70 to-black/40" />
               {/* Contenu */}
-              <div className="relative z-10 p-8 flex flex-col flex-1">
+              <div className="relative z-10 p-7 flex flex-col flex-1">
                 <div className="flex items-start justify-between mb-6">
                   <div className="bg-white/15 backdrop-blur-sm rounded-2xl w-14 h-14 flex items-center justify-center text-3xl border border-white/20">🚨</div>
                   <div className="bg-white/15 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full animate-pulse border border-white/20">
                     EN DIRECT
                   </div>
                 </div>
-                <h2 className="text-2xl font-black text-white mb-2">Dépannage</h2>
-                <p className="text-red-100/90 text-sm leading-relaxed mb-6 flex-1">
-                  Panne, accident, batterie, crevaison. Intervention partout en Île-de-France &amp; Oise en moins de 45 min, 24h/24.
-                </p>
-                <div className="bg-white text-red-600 font-black text-lg py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
+                <p className="text-red-200 text-xs font-bold uppercase tracking-wide mb-1">Besoin immédiat ?</p>
+                <h2 className="text-xl font-black text-white mb-2 flex-1">Dépannage 24h/24 — 7j/7</h2>
+                <div className="bg-white text-red-600 font-black text-base py-3 rounded-2xl text-center group-hover:bg-red-50 transition-colors">
                   06 50 50 01 75
                 </div>
               </div>
             </a>
 
-            {/* VENTE */}
-            <Link href="/vente"
-              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-72">
-              {/* Photo fond showroom */}
-              <Image src="/voitures/car4.jpg" alt="Vente véhicules RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+            {/* EXPERTISE */}
+            <Link href="/expertise"
+              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-80">
+              {/* Photo fond inspection */}
+              <Image src="/expertise-bg.jpg" alt="Expertise inspection RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 25vw" />
               {/* Overlay sombre */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-900/75 to-gray-800/30" />
               {/* Contenu */}
-              <div className="relative z-10 p-8 flex flex-col flex-1">
-                <div className="mb-6" />
-                <h2 className="text-2xl font-black text-white mb-2 mt-auto">Achat · Vente</h2>
-                <p className="text-gray-200 text-sm leading-relaxed mb-6 flex-1">
-                  Véhicules inspectés, révisés et garantis. Chercheur sur-mesure selon vos critères. Importation internationale.
-                </p>
+              <div className="relative z-10 p-7 flex flex-col flex-1">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl w-14 h-14 flex items-center justify-center text-3xl border border-white/20 mb-6">🔍</div>
+                <p className="text-gray-300 text-xs font-bold uppercase tracking-wide mb-1">Vous achetez / vendez un véhicule ?</p>
+                <h2 className="text-xl font-black text-white mb-2 flex-1">Expertise automobile indépendante</h2>
+                <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
+                  En savoir plus <span className="text-red-400">→</span>
+                </div>
+              </div>
+            </Link>
+
+            {/* VENTE */}
+            <Link href="/vente"
+              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-80">
+              {/* Photo fond showroom */}
+              <Image src="/voitures/car4.jpg" alt="Vente véhicules RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 25vw" />
+              {/* Overlay sombre */}
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-900/75 to-gray-800/30" />
+              {/* Contenu */}
+              <div className="relative z-10 p-7 flex flex-col flex-1">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl w-14 h-14 flex items-center justify-center text-3xl border border-white/20 mb-6">🚗</div>
+                <p className="text-gray-300 text-xs font-bold uppercase tracking-wide mb-1">Vous cherchez un véhicule ?</p>
+                <h2 className="text-xl font-black text-white mb-2 flex-1">Vente &amp; recherche personnalisée</h2>
                 <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
                   Voir nos réalisations <span className="text-red-400">→</span>
                 </div>
               </div>
             </Link>
 
-            {/* EXPERTISE */}
-            <Link href="/expertise"
-              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-72">
-              {/* Photo fond inspection */}
-              <Image src="/expertise-bg.jpg" alt="Expertise inspection RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 33vw" />
+            {/* ENTRETIEN */}
+            <Link href="/services"
+              className="group relative rounded-3xl overflow-hidden text-left transition-all duration-300 hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-80">
+              {/* Photo fond atelier */}
+              <Image src="/voitures/car6.jpg" alt="Entretien et réparation RM Automotive" fill className="object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700" sizes="(max-width: 768px) 100vw, 25vw" />
               {/* Overlay sombre */}
               <div className="absolute inset-0 bg-gradient-to-t from-gray-950/95 via-gray-900/75 to-gray-800/30" />
               {/* Contenu */}
-              <div className="relative z-10 p-8 flex flex-col flex-1">
-                <div className="mb-6" />
-                <h2 className="text-2xl font-black text-white mb-2 mt-auto">Expertise · Inspection</h2>
-                <p className="text-gray-200 text-sm leading-relaxed mb-4 flex-1">
-                  Diagnostic complet, mesure peinture, check batterie EV, chiffrage dommages. Partenaire <strong className="text-white">Macadam Europe, Trustoo &amp; Eurotol</strong>.
-                </p>
-                <div className="flex gap-2 flex-wrap mb-4">
-                  {['Macadam Europe', 'Trustoo', 'Eurotol'].map(p => (
-                    <span key={p} className="bg-white/15 backdrop-blur-sm text-gray-200 text-xs px-2 py-0.5 rounded-full border border-white/20">{p}</span>
-                  ))}
-                </div>
+              <div className="relative z-10 p-7 flex flex-col flex-1">
+                <div className="bg-white/15 backdrop-blur-sm rounded-2xl w-14 h-14 flex items-center justify-center text-3xl border border-white/20 mb-6">🔧</div>
+                <p className="text-gray-300 text-xs font-bold uppercase tracking-wide mb-1">Votre véhicule doit être entretenu ?</p>
+                <h2 className="text-xl font-black text-white mb-2 flex-1">Entretien &amp; réparation</h2>
                 <div className="flex items-center gap-2 text-white font-bold text-sm group-hover:gap-3 transition-all">
-                  +4 400 véhicules expertisés <span className="text-red-400">→</span>
+                  Voir nos services <span className="text-red-400">→</span>
                 </div>
               </div>
             </Link>

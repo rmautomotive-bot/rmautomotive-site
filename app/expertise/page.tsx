@@ -137,11 +137,14 @@ export default function Expertise() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
             <div className="text-xs font-bold text-red-600 uppercase tracking-widest mb-2">Réservation en ligne</div>
-            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
-              🚗 Vous avez trouvé votre future voiture ?
+            <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-4">
+              🚗 Vous envisagez d&apos;acheter une voiture d&apos;occasion ?
             </h2>
+            <p className="text-lg text-gray-800 font-bold max-w-2xl mx-auto mb-3 leading-relaxed">
+              Ne vous fiez pas uniquement au vendeur. Faites contrôler le véhicule avant de verser un acompte.
+            </p>
             <p className="text-gray-500 max-w-xl mx-auto">
-              Avant de l&apos;acheter, faites-la contrôler par un professionnel. Envoyez-nous les informations du véhicule.
+              RM Automotive réalise une inspection indépendante du véhicule, directement chez le vendeur ou sur site.
             </p>
           </div>
           <InspectionBooking />
