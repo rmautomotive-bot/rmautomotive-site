@@ -59,7 +59,7 @@ const tiers: Tier[] = [
     nom: 'EXPERT',
     prix: '299 €',
     sousTitre: 'L’analyse la plus poussée',
-    badge: null,
+    badge: '⭐ Recommandé véhicule de valeur/sportive',
     items: [
       'Tout le contenu Premium +',
       'Inspection technique approfondie',
