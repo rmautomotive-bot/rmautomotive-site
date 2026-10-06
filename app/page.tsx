@@ -9,12 +9,12 @@ export const metadata: Metadata = {
 }
 
 const avis = [
+  { nom: 'François D.', note: 5, texte: "Inspection très complète avant achat, plusieurs défauts détectés que le vendeur n'avait pas mentionnés. M'a évité une mauvaise surprise.", date: 'il y a 2 mois', type: 'Inspection' },
   { nom: 'Laureen S.', note: 5, texte: 'Très réactif. Arrivé en 30 min, problème réglé sur place.', date: 'il y a 1 mois', type: 'Dépannage' },
   { nom: 'Florence B.', note: 5, texte: 'Véhicule livré en parfait état, conforme à la description.', date: 'il y a 4 mois', type: 'Vente' },
   { nom: 'Karim T.', note: 5, texte: "Dépannage sur l'A1 un dimanche soir, arrivée ultra rapide.", date: 'il y a 2 mois', type: 'Utilitaire' },
   { nom: 'Sarah M.', note: 5, texte: 'Intervention sur ma Porsche, aucune rayure, plateau impeccable.', date: 'il y a 3 semaines', type: 'Prestige' },
   { nom: 'Marc D.', note: 5, texte: 'Batterie à plat à 2h du matin, réglé en moins de 40 min.', date: 'il y a 6 mois', type: 'Urgence nuit' },
-  { nom: 'Hassan B.', note: 5, texte: 'Fiable, réactif, flexible. Très bien équipé.', date: 'il y a 11 mois', type: 'Dépannage' },
 ]
 
 const piliers = [
@@ -22,6 +22,7 @@ const piliers = [
     id: 'urgence',
     emoji: '🚨',
     accent: 'red',
+    navLabel: 'Urgence',
     question: 'Besoin immédiat ?',
     titre: 'Dépannage 24h/24 — 7j/7',
     proof: '< 45 min · 500+ interventions/an',
@@ -32,19 +33,21 @@ const piliers = [
     id: 'expertise',
     emoji: '🔍',
     accent: 'blue',
-    question: 'Vous achetez / vendez un véhicule ?',
-    titre: 'Expertise automobile indépendante',
-    proof: '+4 400 véhicules expertisés',
-    cta: { label: 'Réserver une inspection', href: '/expertise' },
+    navLabel: 'Inspection',
+    question: 'Vous achetez un véhicule d\'occasion ?',
+    titre: 'Inspection avant achat — dès 149 €',
+    proof: '+4 400 véhicules inspectés',
+    cta: { label: 'Voir les formules', href: '/expertise' },
     img: '/expertise-bg.jpg',
   },
   {
     id: 'vente',
     emoji: '🚗',
     accent: 'green',
+    navLabel: 'Achat / Vente',
     question: 'Vous cherchez un véhicule ?',
     titre: 'Achat, vente & recherche sur-mesure',
-    proof: '100% véhicules garantis',
+    proof: '+4 400 véhicules inspectés',
     cta: { label: 'Voir les véhicules', href: '/vente' },
     img: '/voitures/car4.jpg',
   },
@@ -52,6 +55,7 @@ const piliers = [
     id: 'entretien',
     emoji: '🔧',
     accent: 'orange',
+    navLabel: 'Entretien',
     question: 'Véhicule à entretenir ?',
     titre: 'Entretien & réparation',
     proof: 'Toutes marques · Devis gratuit',
@@ -85,15 +89,18 @@ export default function Home() {
             <span className="text-red-500"> Automotive</span>
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-4 max-w-xl mx-auto leading-relaxed">
-            Dépannage, expertise et solutions automobiles en Île-de-France.
+          <p className="text-lg md:text-xl text-gray-400 mb-1 max-w-xl mx-auto leading-relaxed">
+            Votre partenaire automobile en Île-de-France &amp; Oise.
+          </p>
+          <p className="text-sm md:text-base text-gray-500 mb-4 max-w-xl mx-auto leading-relaxed">
+            Dépannage 24h/24 · Inspection avant achat · Expertise · Vente &amp; importation
           </p>
 
           {/* Preuve immédiate */}
           <div className="flex items-center justify-center gap-4 mb-8 text-sm">
             <span className="flex items-center gap-1.5 text-yellow-400 font-bold">⭐⭐⭐⭐⭐ <span className="text-white">5/5</span></span>
             <span className="text-gray-600">·</span>
-            <span className="text-gray-400">55 avis Google</span>
+            <span className="text-gray-400">55 avis clients Google</span>
             <span className="text-gray-600">·</span>
             <span className="text-gray-400">Partenaire assurances &amp; concessionnaires</span>
           </div>
@@ -103,7 +110,7 @@ export default function Home() {
             {piliers.map(p => (
               <a key={p.id} href={`#${p.id}`}
                 className={`flex items-center gap-1.5 text-xs font-bold px-4 py-2 rounded-full border transition-all hover:scale-105 ${accentMap[p.accent].border} bg-white/5 hover:bg-white/10 text-white`}>
-                <span>{p.emoji}</span> {p.titre.split(' ')[0] === 'Dépannage' ? 'Urgence' : p.titre.split('&')[0].trim()}
+                <span>{p.emoji}</span> {p.navLabel}
               </a>
             ))}
           </div>
@@ -147,11 +154,9 @@ export default function Home() {
         <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8 md:gap-12 text-center">
           {[
             { v: '⭐ 5/5', l: '55 avis Google' },
-            { v: '< 45 min', l: 'Délai intervention' },
+            { v: '🚨 Rapide', l: 'Intervention 24h/24 7j/7' },
+            { v: '+4 400', l: 'Véhicules inspectés' },
             { v: '8 dép.', l: 'Île-de-France couverte' },
-            { v: '24h/7j', l: 'Dépannage nonstop' },
-            { v: '+500', l: 'Interventions / an' },
-            { v: '100%', l: 'Véhicules garantis' },
           ].map(s => (
             <div key={s.l}>
               <div className="text-2xl font-black text-gray-900">{s.v}</div>
@@ -201,47 +206,57 @@ export default function Home() {
 
             {/* CTA */}
             <div className="bg-gray-950 rounded-2xl p-5 flex flex-col justify-center gap-3">
-              <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-5 py-4 rounded-2xl text-center transition-all flex items-center justify-center gap-2">
-                📞 06 50 50 01 75
+              <a href="tel:0650500175" className="bg-red-600 hover:bg-red-700 text-white font-black px-5 py-4 rounded-2xl text-center transition-all flex items-center justify-center gap-2 animate-pulse">
+                📞 APPELER MAINTENANT
               </a>
-              <a href="https://wa.me/33650500175?text=Bonjour%2C%20j%27ai%20besoin%20d%27un%20d%C3%A9pannage." target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-500 text-white font-bold px-5 py-3.5 rounded-2xl text-center text-sm transition-all flex items-center justify-center gap-2">
+              <Link href="/depannage#devis" className="bg-white hover:bg-gray-100 text-gray-900 font-bold px-5 py-3.5 rounded-2xl text-center text-sm transition-all">
+                💰 Obtenir un tarif
+              </Link>
+              <a href="https://wa.me/33650500175?text=Bonjour%2C%20j%27ai%20besoin%20d%27un%20d%C3%A9pannage." target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white text-xs font-semibold text-center transition-colors flex items-center justify-center gap-1.5">
                 💬 WhatsApp
               </a>
-              <Link href="/depannage" className="text-gray-400 hover:text-white text-xs font-semibold text-center transition-colors">Voir les zones couvertes →</Link>
             </div>
           </div>
         </div>
       </section>
 
 
-      {/* ══════════ EXPERTISE ══════════ */}
+      {/* ══════════ INSPECTION AVANT ACHAT ══════════ */}
       <section id="expertise" className="py-16 px-4 bg-blue-50/40 border-t-4 border-blue-600 scroll-mt-20">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center gap-3 mb-8">
             <div className="bg-blue-600 text-white w-10 h-10 rounded-xl flex items-center justify-center text-xl flex-shrink-0">🔍</div>
             <div>
-              <div className="text-xs font-bold text-blue-600 uppercase tracking-widest">Expertise &amp; inspection</div>
-              <h2 className="text-2xl md:text-3xl font-black text-gray-900">Ne vous fiez pas qu'au vendeur.</h2>
+              <div className="text-xs font-bold text-blue-600 uppercase tracking-widest">Inspection avant achat</div>
+              <h2 className="text-2xl md:text-3xl font-black text-gray-900">Vous avez trouvé votre prochaine voiture ?</h2>
             </div>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             <div className="lg:col-span-2 bg-white rounded-2xl p-6 border border-blue-100">
-              <p className="text-gray-700 font-semibold mb-4">Inspection indépendante avant d'acheter — chez le vendeur ou sur site. Zéro mauvaise surprise.</p>
+              <p className="text-gray-700 font-semibold mb-1">Ne vous engagez pas avant de connaître son véritable état.</p>
+              <p className="text-gray-500 text-sm mb-4">Inspection complète chez le vendeur ou sur site, rapport PDF détaillé remis sous 24h.</p>
               <div className="flex flex-wrap gap-2 mb-5">
-                {['Peinture', 'Carrosserie', 'Calculateur/ECU', 'Pneus', 'Mécanique', 'Historique'].map(l => (
-                  <span key={l} className="bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">{l}</span>
+                {[
+                  { icon: '🔧', t: 'Contrôles mécaniques' },
+                  { icon: '💻', t: 'Diagnostic électronique' },
+                  { icon: '🎨', t: 'Mesure de peinture' },
+                  { icon: '🛞', t: 'Pneus & freinage' },
+                  { icon: '⚙️', t: 'Trains roulants' },
+                  { icon: '📋', t: 'Rapport PDF' },
+                ].map(l => (
+                  <span key={l.t} className="flex items-center gap-1.5 bg-blue-50 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full">{l.icon} {l.t}</span>
                 ))}
               </div>
               <div className="flex items-center gap-4">
                 <div className="text-center">
-                  <div className="font-black text-2xl text-blue-700">4 400+</div>
-                  <div className="text-[11px] text-gray-500">véhicules expertisés</div>
+                  <div className="font-black text-2xl text-blue-700">149 €</div>
+                  <div className="text-[11px] text-gray-500">formule essentielle</div>
                 </div>
                 <div className="h-8 w-px bg-gray-200" />
                 <div className="text-center">
-                  <div className="font-black text-2xl text-blue-700">3</div>
-                  <div className="text-[11px] text-gray-500">partenaires certifiés</div>
+                  <div className="font-black text-2xl text-blue-700">4 400+</div>
+                  <div className="text-[11px] text-gray-500">véhicules inspectés</div>
                 </div>
                 <div className="h-8 w-px bg-gray-200 hidden sm:block" />
                 <div className="hidden sm:flex items-center gap-3 opacity-70">
@@ -252,9 +267,9 @@ export default function Home() {
 
             <div className="bg-gray-950 rounded-2xl p-5 flex flex-col justify-center gap-3">
               <Link href="/expertise" className="bg-blue-600 hover:bg-blue-700 text-white font-black px-5 py-4 rounded-2xl text-center transition-all">
-                Réserver une inspection
+                Voir les formules
               </Link>
-              <a href="https://wa.me/33650500175?text=Bonjour%2C%20je%20souhaite%20une%20expertise%20automobile." target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-500 text-white font-bold px-5 py-3.5 rounded-2xl text-center text-sm transition-all">
+              <a href="https://wa.me/33650500175?text=Bonjour%2C%20je%20souhaite%20une%20inspection%20avant%20achat." target="_blank" rel="noopener noreferrer" className="bg-green-600 hover:bg-green-500 text-white font-bold px-5 py-3.5 rounded-2xl text-center text-sm transition-all">
                 💬 WhatsApp
               </a>
             </div>

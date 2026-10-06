@@ -385,7 +385,7 @@ export default function Depannage() {
       </section>
 
       {/* DEVIS RAPIDE */}
-      <section className="py-20 px-4 bg-gray-50">
+      <section id="devis" className="py-20 px-4 bg-gray-50 scroll-mt-20">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
