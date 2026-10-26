@@ -294,6 +294,160 @@ Si votre assurance ne couvre pas (rare mais possible), exigez un devis avant tou
 📞 **06 50 50 01 75**
     `,
   },
+  {
+    slug: 'acheter-voiture-occasion-points-controle-ile-de-france',
+    titre: 'Acheter une voiture d\'occasion en Île-de-France : les points de contrôle à ne jamais négliger',
+    excerpt: 'Annonce trop belle, historique flou, kilométrage douteux... Voici les vérifications indispensables avant d\'acheter un véhicule d\'occasion, et pourquoi une inspection professionnelle change tout.',
+    date: '2026-02-22',
+    tempsLecture: '5 min',
+    categorie: 'Conseils',
+    contenu: `
+## Acheter une voiture d'occasion : ne vous faites pas avoir
+
+Chaque année, des milliers d'acheteurs en Île-de-France découvrent — trop tard — qu'ils ont payé le prix d'un véhicule sain pour une voiture accidentée, roulée au compteur ou mécaniquement fragile. Voici comment éviter ce piège.
+
+### 1. Vérifiez l'historique d'entretien
+
+Un carnet d'entretien complet, avec factures datées et kilométrages cohérents, est le premier signal de confiance. Méfiez-vous des carnets "perdus" ou des historiques avec des trous de plusieurs années.
+
+- Les kilométrages doivent progresser de façon logique entre chaque facture
+- Les révisions importantes (distribution, embrayage) doivent apparaître aux bons intervalles
+- Un historique 100% chez le même garage rassure, un historique éparpillé interroge
+
+### 2. Contrôlez la cohérence du compteur kilométrique
+
+Le compteur trafiqué reste une fraude fréquente sur le marché de l'occasion. Quelques signaux d'alerte :
+
+| Signal | Ce que ça révèle |
+|---|---|
+| Usure du volant/pédales incohérente avec le km affiché | Compteur potentiellement trafiqué |
+| Pneus très usés sur un "faible kilométrage" | Vérifier l'historique réel |
+| Historique d'entretien avec sauts de km improbables | Rupture de traçabilité |
+| Contrôles techniques successifs avec km qui ne progresse pas logiquement | Fraude probable |
+
+### 3. Faites réaliser une inspection avant achat
+
+C'est l'étape que trop d'acheteurs sautent — et qu'ils regrettent. Une inspection professionnelle (type Trustoo) vérifie en moins d'une heure :
+
+- L'état mécanique complet (moteur, boîte, freins, suspensions)
+- La carrosserie (traces de choc, reprises de peinture, châssis)
+- Les points de sécurité électroniques et les codes défaut
+- La cohérence globale avec l'historique déclaré
+
+### 4. Négociez sur des faits, pas sur un ressenti
+
+Un rapport d'inspection écrit vous donne un argument de négociation solide et objectif face au vendeur — bien plus efficace qu'un "ça a l'air bien".
+
+### Pourquoi passer par RM Automotive avant un achat
+
+- 🔍 **Plus de 4 400 véhicules déjà inspectés**
+- ✅ **Partenaire Trustoo** — inspection certifiée et rapport détaillé
+- 📍 Déplacement possible partout en Île-de-France pour voir le véhicule chez le vendeur
+- 📞 Devis rapide, intervention sous 24-48h
+
+📞 **06 50 50 01 75** — Ne signez rien avant d'avoir vérifié.
+    `,
+  },
+  {
+    slug: 'courroie-distribution-quand-changer',
+    titre: 'Courroie de distribution : quand la changer et pourquoi c\'est vital',
+    excerpt: 'Une courroie de distribution qui casse, c\'est souvent un moteur détruit. Voici les kilométrages à respecter, les signes d\'alerte, et pourquoi cet entretien ne se négocie pas.',
+    date: '2026-02-23',
+    tempsLecture: '4 min',
+    categorie: 'Conseils',
+    contenu: `
+## Courroie de distribution : l'entretien qui peut sauver votre moteur
+
+C'est l'une des pannes les plus coûteuses — et pourtant l'une des plus évitables. La courroie (ou chaîne) de distribution synchronise l'ouverture des soupapes avec les pistons. Si elle casse en roulant, les conséquences sont souvent irréversibles.
+
+### Que se passe-t-il si elle casse ?
+
+Sur un **moteur dit "non décompressé"** (la majorité des moteurs modernes), la rupture de la courroie provoque un contact entre pistons et soupapes. Résultat : soupapes pliées, pistons endommagés, parfois la tête de bielle cassée. La facture de réparation dépasse souvent **1 500 à 4 000 €**, contre quelques centaines d'euros pour un remplacement préventif.
+
+### À quel kilométrage la changer ?
+
+Les intervalles varient selon le constructeur et le motorisation, mais les repères généraux sont :
+
+| Type de motorisation | Intervalle recommandé |
+|---|---|
+| Essence classique | 100 000 à 160 000 km |
+| Diesel | 100 000 à 150 000 km |
+| Certains moteurs récents | Jusqu'à 200 000 km (vérifier carnet constructeur) |
+| Durée dans le temps | 5 à 10 ans, même sans atteindre le kilométrage |
+
+**Important** : même un véhicule peu utilisé doit respecter l'intervalle en années — le caoutchouc vieillit avec le temps, pas seulement avec les kilomètres.
+
+### Les signes qui doivent alerter
+
+- Bruit de cliquetis ou de grincement au niveau du bloc moteur
+- Fuite d'huile ou de liquide de refroidissement près du carter de distribution
+- Voyant moteur allumé sans cause évidente
+- Démarrage difficile ou ratés moteur
+
+À l'apparition de ces signes, **ne prenez aucun risque** : un contrôle rapide évite une panne catastrophique.
+
+### Le kit complet, pas juste la courroie
+
+Chez RM Automotive, le remplacement se fait toujours avec le **kit complet** : courroie, galets tendeurs, galet enrouleur, et pompe à eau si elle est entraînée par la distribution. Remplacer uniquement la courroie sans les galets, c'est prendre le risque de revenir dans quelques mois.
+
+### Pourquoi faire confiance à RM Automotive
+
+- 🔧 Remplacement toutes marques avec kit complet constructeur
+- ⭐ **5/5 sur Google** — 56 avis vérifiés
+- 📍 Atelier à Mitry-Mory (77), devis gratuit
+- 📞 Diagnostic rapide si vous avez un doute sur l'état de votre distribution
+
+📞 **06 50 50 01 75** — Mieux vaut prévenir qu'un moteur à refaire.
+    `,
+  },
+  {
+    slug: 'batterie-voiture-hiver-pannes',
+    titre: 'Batterie de voiture en hiver : pourquoi elle lâche et comment l\'éviter',
+    excerpt: 'Le froid est le pire ennemi d\'une batterie fatiguée. Voici pourquoi les pannes de batterie explosent en hiver en Île-de-France, et comment éviter de tomber en panne devant chez vous.',
+    date: '2026-02-24',
+    tempsLecture: '3 min',
+    categorie: 'Conseils',
+    contenu: `
+## Batterie à plat en hiver : la panne la plus fréquente de la saison
+
+Chaque hiver, RM Automotive multiplie les interventions pour batteries à plat en Île-de-France — souvent au pire moment, un matin froid avant d'aller travailler. Voici pourquoi, et comment l'anticiper.
+
+### Pourquoi le froid tue les batteries fatiguées
+
+Le froid réduit la capacité chimique d'une batterie de façon significative :
+
+- À 0°C, une batterie perd environ **20% de sa capacité**
+- À -10°C, la perte peut atteindre **30 à 40%**
+- En parallèle, le moteur froid demande **plus de courant** au démarreur pour démarrer
+
+Une batterie qui tenait "juste" l'été ne tient souvent plus du tout dès les premiers grands froids.
+
+### Les signes d'une batterie en fin de vie
+
+- Démarrage plus lent ou hésitant, surtout le matin
+- Voyants qui faiblissent brièvement au démarrage
+- Batterie de plus de **4-5 ans** jamais contrôlée
+- Véhicule peu utilisé (trajets courts, stationnement fréquent)
+
+### Comment limiter le risque
+
+1. **Faites contrôler votre batterie avant l'hiver** — un test de charge prend quelques minutes
+2. Évitez de multiplier les très courts trajets qui ne rechargent jamais complètement la batterie
+3. Limitez l'usage simultané de tous les équipements électriques (chauffage, sièges chauffants, radio) au démarrage
+4. Si votre batterie a plus de 4-5 ans, anticipez son remplacement plutôt que d'attendre la panne
+
+### Si vous tombez en panne malgré tout
+
+Ne paniquez pas : RM Automotive intervient **24h/24** partout en Île-de-France pour un démarrage d'urgence ou un remplacement de batterie sur place, toutes marques.
+
+- 🔋 Démarrage d'urgence en quelques minutes
+- 🔧 Remplacement batterie sur place si nécessaire
+- 📞 Intervention couverte par votre assurance si vous êtes couvert
+- 📍 8 départements d'Île-de-France couverts
+
+📞 **06 50 50 01 75** — Disponible même à 6h du matin.
+    `,
+  },
 ]
 
 export function getArticle(slug: string): Article | undefined {
