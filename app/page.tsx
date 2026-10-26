@@ -100,7 +100,7 @@ export default function Home() {
           <div className="flex items-center justify-center gap-4 mb-8 text-sm">
             <span className="flex items-center gap-1.5 text-yellow-400 font-bold">⭐⭐⭐⭐⭐ <span className="text-white">5/5</span></span>
             <span className="text-gray-600">·</span>
-            <span className="text-gray-400">55 avis clients Google</span>
+            <span className="text-gray-400">56 avis clients Google</span>
             <span className="text-gray-600">·</span>
             <span className="text-gray-400">Partenaire assurances &amp; concessionnaires</span>
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
       <section className="bg-gray-50 py-10 px-4">
         <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-8 md:gap-12 text-center">
           {[
-            { v: '⭐ 5/5', l: '55 avis Google' },
+            { v: '⭐ 5/5', l: '56 avis Google' },
             { v: '🚨 Rapide', l: 'Intervention 24h/24 7j/7' },
             { v: '+4 400', l: 'Véhicules inspectés' },
             { v: '8 dép.', l: 'Île-de-France couverte' },
@@ -399,7 +399,7 @@ export default function Home() {
               <span className="text-yellow-400 text-2xl">⭐⭐⭐⭐⭐</span>
               <div>
                 <span className="font-black text-xl text-gray-900">5/5</span>
-                <span className="text-gray-500 text-sm ml-2">· 55 avis Google</span>
+                <span className="text-gray-500 text-sm ml-2">· 56 avis Google</span>
               </div>
             </div>
             <a href="https://g.page/r/rmautomotive/review" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-bold text-gray-500 hover:text-red-600 transition-colors">

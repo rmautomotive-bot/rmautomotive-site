@@ -123,7 +123,7 @@ export default function Expertise() {
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-black text-red-500">5/5</div>
-            <div className="text-xs text-gray-400 mt-2 uppercase tracking-wide">⭐ 55 avis Google</div>
+            <div className="text-xs text-gray-400 mt-2 uppercase tracking-wide">⭐ 56 avis Google</div>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-black text-red-500">100%</div>

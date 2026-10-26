@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     url: 'https://rmautomotive.fr',
     siteName: 'RM Automotive',
     title: 'RM Automotive | Dépannage 24h/24 — Toute l\'Île-de-France ⭐ 5/5',
-    description: 'Dépannage automobile 24h/24 partout en Île-de-France. 55 avis 5 étoiles Google. ☎ 06 50 50 01 75.',
+    description: 'Dépannage automobile 24h/24 partout en Île-de-France. 56 avis 5 étoiles Google. ☎ 06 50 50 01 75.',
   },
   robots: { index: true, follow: true },
 }
@@ -137,7 +137,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 </span>
               </div>
               <p className="text-sm text-gray-400 leading-relaxed mb-4">
-                Garage multi-services en <strong className="text-white">Île-de-France &amp; Oise</strong> — dépannage 24h/24, vente de véhicules, inspection et expertise. Partenaire agréé concessionnaires &amp; assurances. 5/5 · 55 avis Google.
+                Garage multi-services en <strong className="text-white">Île-de-France &amp; Oise</strong> — dépannage 24h/24, vente de véhicules, inspection et expertise. Partenaire agréé concessionnaires &amp; assurances. 5/5 · 56 avis Google.
               </p>
               <div className="flex gap-3 mb-6">
                 <a href="https://www.instagram.com/rmautomotive77/" target="_blank" rel="noopener noreferrer" className="bg-gray-800 hover:bg-gray-700 text-white w-9 h-9 rounded-lg flex items-center justify-center transition-all text-sm font-bold">IG</a>
